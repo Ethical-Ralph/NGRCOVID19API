@@ -1,5 +1,5 @@
 const { NationalTimeline } = require('../database');
-const { subtractDayFromDate } = require('../utils/utils');
+const { subtractDayFromDate, sortByDate } = require('../utils/utils');
 
 /**
  * Fetches all timeline data from database
@@ -11,7 +11,7 @@ const getTimelines = async (from, to) => {
     const query = from && to ? { date: { $gte: from, $lte: to } } : {};
     try {
         const data = await NationalTimeline.find(query).select('-_id');
-        return data;
+        return sortByDate(data);
     } catch (error) {
         throw error;
     }
@@ -27,7 +27,7 @@ const getTimelineByDate = async (date) => {
         const timeline = await NationalTimeline.findOne({ date }).select(
             '-_id',
         );
-        return timeline;
+        return sortByDate(timeline);
     } catch (error) {
         throw error;
     }

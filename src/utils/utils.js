@@ -22,6 +22,12 @@ const removeId = (data) => {
     });
 };
 
+const sortByDate = (data) => {
+    return data.sort((a, b) => {
+        return new Date(a.date) - new Date(b.date);
+    });
+};
+
 // i ran out of variable names lol
 const filterByDate = (data, date) => {
     date = new Date(date).toLocaleDateString();
@@ -59,4 +65,5 @@ module.exports = {
     filterByDate,
     removeId,
     filterData,
+    sortByDate,
 };
