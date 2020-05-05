@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose")
 const routes = require("./Route");
 const cronService = require("./service/cronService");
-const timelineService = require("./service/timelineService");
 const errorHandler = require("./utils/errorhandler")
 
 
@@ -34,7 +33,6 @@ app.all('*', (req, res) => {
 
 mongoose.connection.once('open', async () => {
 
-    // await timelineService.bulkInsert()
     console.log('mongodb connected')
 })
 

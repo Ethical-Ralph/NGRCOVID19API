@@ -3,19 +3,6 @@ const { cases_time_line } = require("../case_timeline");
 const { subtractDayFromDate } = require("../utils/utils");
 
 
-const bulkInsert = async () => {
-    const timeline = cases_time_line;
-    try {
-        for (var i = 0; i < timeline; i++) {
-            const data = timeline[ i ]
-            const newTimeline = new Timeline(data)
-            await newTimeline.save()
-        }
-        console.log('bulk done')
-    } catch (error) {
-        throw error
-    }
-}
 
 /**
  * Fetches all timeline data from database
@@ -69,7 +56,6 @@ const createTimeline = async (previousTimeline, previousTotals) => {
 
 
 module.exports = {
-    bulkInsert,
     getTimelines,
     getTimelineByDate,
     createTimeline

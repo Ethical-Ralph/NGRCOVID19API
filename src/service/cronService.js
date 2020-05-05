@@ -12,7 +12,7 @@ const { subtractDayFromDate } = require("../utils/utils");
 * Schedule to fetch and save new total data
 */
 const scheduleToGetTotalData = async () => {
-    cron.schedule('* * * * *', async () => {
+    cron.schedule('* 1 * * *', async () => {
         const newTotals = await totalsService.fetchNewLatest();
         console.log(newTotals)
         const isValid = validateTotals(newTotals)
