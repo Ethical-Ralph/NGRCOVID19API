@@ -181,6 +181,7 @@ Install the app, write your feature and make your pull request.
 # Todo
   - Timeline for all states
   - Tests
+  - Send mail to admin if cron job fails
 
 
 
