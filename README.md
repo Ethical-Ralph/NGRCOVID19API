@@ -33,7 +33,7 @@ The endpoints to the API is described below.
         }
     }
    
-## Get latest totals for all state
+## Get latest totals for all states
 
 ### Request
 
@@ -123,8 +123,8 @@ The endpoints to the API is described below.
 ## Get timeline with date range
 
 ### Query
-from = `Date` format: YYYY-MM-DD
-to = `Date` format: YYYY-MM-DD
+  - from = `Date` format: YYYY-MM-DD
+  - to = `Date` format: YYYY-MM-DD
 
 ### Request
 
