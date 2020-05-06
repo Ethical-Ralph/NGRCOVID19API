@@ -10,6 +10,8 @@ const { subtractDayFromDate } = require('../utils/utils');
  */
 const scheduleToGetTotalData = () => {
     let times = 0;
+
+    //Runs job every 1 hour
     cron.schedule('59 * * * *', async () => {
         try {
             const newTotals = await totalsService.fetchNewLatest();
@@ -36,8 +38,10 @@ const scheduleToGetTotalData = () => {
  */
 const scheduleToGetStateData = () => {
     let times = 0;
-    try {
-        cron.schedule('59 * * * *', async () => {
+
+    //Runs job every 1 hour
+    cron.schedule('59 * * * *', async () => {
+        try {
             const newStateTotals = await statesService.fetchNewStateData();
             const isValid = validateStateData(newStateTotals);
             if (isValid) {
@@ -51,15 +55,16 @@ const scheduleToGetStateData = () => {
                 throw 'Invalid Data';
             }
             console.log('State cron done');
-        });
-    } catch (error) {
-        console.log(error);
-    }
+        } catch (error) {
+            console.log(error);
+        }
+    });
 };
 
 const scheduleToCreateTimeline = () => {
-    try {
-        cron.schedule('* 1 * * *', async () => {
+    //Runs job every day at 1:00 AM
+    cron.schedule('* 1 * * *', async () => {
+        try {
             const newTotals = await totalsService.getTotals();
             const lastTimelineDate = subtractDayFromDate(2);
             const previousTimeline = await timelineService.getTimelineByDate(
@@ -67,10 +72,10 @@ const scheduleToCreateTimeline = () => {
             );
             await timelineService.createTimeline(previousTimeline, newTotals);
             console.log('Timeline cron done');
-        });
-    } catch (error) {
-        console.log(error);
-    }
+        } catch (error) {
+            console.log(error);
+        }
+    });
 };
 
 const startCronJobs = () => {
