@@ -59,7 +59,7 @@ const scheduleToGetStateData = () => {
 
 const scheduleToCreateTimeline = () => {
     try {
-        cron.schedule('* * * * *', async () => {
+        cron.schedule('* 1 * * *', async () => {
             const newTotals = await totalsService.getTotals();
             const lastTimelineDate = subtractDayFromDate(2);
             console.log(lastTimelineDate);

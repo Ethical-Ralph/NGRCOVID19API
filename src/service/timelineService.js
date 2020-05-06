@@ -5,10 +5,7 @@ const { subtractDayFromDate } = require('../utils/utils');
  * Fetches all timeline data from database
  */
 const getTimelines = async (from, to) => {
-    const query =
-        from && to
-            ? { date: { $gte: new Date(from), $lte: new Date(to) } }
-            : {};
+    const query = from && to ? { date: { $gte: from, $lte: to } } : {};
     console.log(query);
     try {
         const data = await Timeline.find(query).select('-_id');
@@ -24,7 +21,6 @@ const getTimelines = async (from, to) => {
  * @returns {object} Returns Timeline object
  */
 const getTimelineByDate = async (date) => {
-    date = new Date(date);
     try {
         const timeline = await Timeline.findOne({ date }).select('-_id');
         return timeline;
