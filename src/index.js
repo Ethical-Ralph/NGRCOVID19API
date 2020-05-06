@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const routes = require('./Route');
 const cronService = require('./service/cronService');
 const errorHandler = require('./utils/errorhandler');
-
 require('dotenv').config();
 
 const app = express();
@@ -30,7 +29,7 @@ app.all('*', (req, res) => {
     res.send('I think you are lost');
 });
 
-mongoose.connection.once('open', async () => {
+mongoose.connection.once('open', () => {
     console.log('mongodb connected');
 });
 
