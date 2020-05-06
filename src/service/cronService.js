@@ -10,7 +10,7 @@ const { subtractDayFromDate } = require('../utils/utils');
  */
 const scheduleToGetTotalData = () => {
     let times = 0;
-    cron.schedule('* * * * *', async () => {
+    cron.schedule('59 * * * *', async () => {
         try {
             const newTotals = await totalsService.fetchNewLatest();
             const isValid = validateTotals(newTotals);
@@ -59,7 +59,7 @@ const scheduleToGetStateData = () => {
 
 const scheduleToCreateTimeline = () => {
     try {
-        cron.schedule('59 * * * *', async () => {
+        cron.schedule('* * * * *', async () => {
             const newTotals = await totalsService.getTotals();
             const lastTimelineDate = subtractDayFromDate(2);
             const previousTimeline = await timelineService.getTimelineByDate(
