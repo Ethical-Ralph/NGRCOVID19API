@@ -62,9 +62,11 @@ const scheduleToCreateTimeline = () => {
         cron.schedule('* 1 * * *', async () => {
             const newTotals = await totalsService.getTotals();
             const lastTimelineDate = subtractDayFromDate(2);
+            console.log(lastTimelineDate);
             const previousTimeline = await timelineService.getTimelineByDate(
                 lastTimelineDate,
             );
+            console.log(previousTimeline);
             await timelineService.createTimeline(previousTimeline, newTotals);
             console.log('Timeline cron done');
         });
