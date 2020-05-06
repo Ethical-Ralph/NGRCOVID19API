@@ -61,7 +61,7 @@ The endpoints to the API is described below.
                     "discharged": 0,
                     "death": 8
                 },
-                ...
+                ....
             ]
      }
 
