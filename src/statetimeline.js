@@ -1,4 +1,4 @@
-const states = [
+const statesTimeline = [
     {
         state: 'jigawa',
         confirmed: [
@@ -37,7 +37,7 @@ const states = [
         ],
     },
     {
-        state: delta,
+        state: 'delta',
         confirmed: [
             { date: '2020-04-07', confirmed: 1 },
             { date: '2020-04-09', confirmed: 1 },
@@ -90,7 +90,7 @@ const states = [
         ],
     },
     {
-        state: kwara,
+        state: 'kwara',
         confirmed: [
             { date: '2020-04-06', confirmed: 2 },
             { date: '2020-04-12', confirmed: 2 },
@@ -102,7 +102,7 @@ const states = [
         ],
     },
     {
-        state: akwaibom,
+        state: 'akwaibom',
         confirmed: [
             { date: '2020-04-01', confirmed: 5 },
             { date: '2020-04-14', confirmed: 1 },
@@ -113,7 +113,7 @@ const states = [
         ],
     },
     {
-        state: ogun,
+        state: 'ogun',
         confirmed: [
             { date: '2020-02-27', confirmed: 1 },
             { date: '2020-03-09', confirmed: 1 },
@@ -136,7 +136,7 @@ const states = [
         ],
     },
     {
-        state: plateau,
+        state: 'plateau',
         confirmed: [
             { date: '2020-04-23', confirmed: 1 },
             { date: '2020-05-02', confirmed: 2 },
@@ -144,7 +144,7 @@ const states = [
         ],
     },
     {
-        state: oyo,
+        state: 'oyo',
         confirmed: [
             { date: '2020-03-22', confirmed: 1 },
             { date: '2020-03-27', confirmed: 2 },
@@ -167,7 +167,7 @@ const states = [
         ],
     },
     {
-        state: yobe,
+        state: 'yobe',
         confirmed: [
             { date: '2020-04-29', confirmed: 1 },
             { date: '2020-05-01', confirmed: 3 },
@@ -175,7 +175,7 @@ const states = [
         ],
     },
     {
-        state: ebonyi,
+        state: 'ebonyi',
         confirmed: [
             { date: '2020-04-26', confirmed: 1 },
             { date: '2020-04-29', confirmed: 1 },
@@ -184,18 +184,18 @@ const states = [
         ],
     },
     {
-        state: anambra,
+        state: 'anambra',
         confirmed: [{ date: '2020-04-10', confirmed: 1 }],
     },
     {
-        state: imo,
+        state: 'imo',
         confirmed: [
             { date: '2020-04-25', confirmed: 1 },
             { date: '2020-05-01', confirmed: 1 },
         ],
     },
     {
-        state: katsina,
+        state: 'katsina',
         confirmed: [
             { date: '2020-04-07', confirmed: 1 },
             { date: '2020-04-10', confirmed: 3 },
@@ -213,7 +213,7 @@ const states = [
         ],
     },
     {
-        state: osun,
+        state: 'osun',
         confirmed: [
             { date: '2020-03-25', confirmed: 1 },
             { date: '2020-03-28', confirmed: 1 },
@@ -227,7 +227,7 @@ const states = [
         ],
     },
     {
-        state: adamawa,
+        state: 'adamawa',
         confirmed: [
             { date: '2020-04-22', confirmed: 1 },
             { date: '2020-04-29', confirmed: 1 },
@@ -238,7 +238,7 @@ const states = [
         ],
     },
     {
-        state: fct,
+        state: 'fct',
         confirmed: [
             { date: '2020-03-21', confirmed: 3 },
             { date: '2020-03-22', confirmed: 1 },
@@ -283,7 +283,7 @@ const states = [
         ],
     },
     {
-        state: rivers,
+        state: 'rivers',
         confirmed: [
             { date: '2020-03-25', confirmed: 1 },
             { date: '2020-04-06', confirmed: 1 },
@@ -295,7 +295,7 @@ const states = [
         ],
     },
     {
-        state: kaduna,
+        state: 'kaduna',
         confirmed: [
             { date: '2020-03-28', confirmed: 1 },
             { date: '2020-03-30', confirmed: 2 },
@@ -313,7 +313,7 @@ const states = [
         ],
     },
     {
-        state: lagos,
+        state: 'lagos',
         confirmed: [
             { date: '2020-03-17', confirmed: 1 },
             { date: '2020-03-18', confirmed: 4 },
@@ -364,7 +364,7 @@ const states = [
         ],
     },
     {
-        state: kano,
+        state: 'kano',
         confirmed: [
             { date: '2020-04-11', confirmed: 1 },
             { date: '2020-04-13', confirmed: 2 },
@@ -387,14 +387,14 @@ const states = [
         ],
     },
     {
-        state: bayelsa,
+        state: 'bayelsa',
         confirmed: [
             { date: '2020-04-26', confirmed: 1 },
             { date: '2020-04-30', confirmed: 4 },
         ],
     },
     {
-        state: taraba,
+        state: 'taraba',
         confirmed: [
             { date: '2020-04-26', confirmed: 6 },
             { date: '2020-04-27', confirmed: 2 },
@@ -402,7 +402,7 @@ const states = [
         ],
     },
     {
-        state: edo,
+        state: 'edo',
         confirmed: [
             { date: '2020-03-23', confirmed: 1 },
             { date: '2020-03-27', confirmed: 1 },
@@ -427,7 +427,7 @@ const states = [
         ],
     },
     {
-        state: gombe,
+        state: 'gombe',
         confirmed: [
             { date: '2020-04-20', confirmed: 5 },
             { date: '2020-04-23', confirmed: 4 },
@@ -443,7 +443,7 @@ const states = [
         ],
     },
     {
-        state: jigawa,
+        state: 'jigawa',
         confirmed: [
             { date: '2020-04-18', confirmed: 1 },
             { date: '2020-04-19', confirmed: 1 },
@@ -452,14 +452,14 @@ const states = [
         ],
     },
     {
-        state: benue,
+        state: 'benue',
         confirmed: [
             { date: '2020-03-28', confirmed: 1 },
             { date: '2020-05-04', confirmed: 1 },
         ],
     },
     {
-        state: niger,
+        state: 'niger',
         confirmed: [
             { date: '2020-04-10', confirmed: 1 },
             { date: '2020-04-15', confirmed: 1 },
@@ -468,7 +468,7 @@ const states = [
         ],
     },
     {
-        state: zamfara,
+        state: 'zamfara',
         confirmed: [
             { date: '2020-04-24', confirmed: 2 },
             { date: '2020-04-28', confirmed: 2 },
@@ -479,7 +479,260 @@ const states = [
         ],
     },
     {
-        state: abia,
+        state: 'abia',
         confirmed: [{ date: '2020-04-20', confirmed: 2 }],
     },
 ];
+
+const newData = [
+    {
+        state: 'lagos',
+        confirmedCases: 1226,
+        activeCases: 875,
+        discharged: 321,
+        death: 30,
+    },
+    {
+        state: 'kano',
+        confirmedCases: 397,
+        activeCases: 383,
+        discharged: 3,
+        death: 11,
+    },
+    {
+        state: 'fct',
+        confirmedCases: 307,
+        activeCases: 264,
+        discharged: 40,
+        death: 3,
+    },
+    {
+        state: 'borno',
+        confirmedCases: 106,
+        activeCases: 92,
+        discharged: 0,
+        death: 14,
+    },
+    {
+        state: 'gombe',
+        confirmedCases: 98,
+        activeCases: 98,
+        discharged: 0,
+        death: 0,
+    },
+    {
+        state: 'katsina',
+        confirmedCases: 92,
+        activeCases: 78,
+        discharged: 6,
+        death: 8,
+    },
+    {
+        state: 'ogun',
+        confirmedCases: 91,
+        activeCases: 77,
+        discharged: 12,
+        death: 2,
+    },
+    {
+        state: 'kaduna',
+        confirmedCases: 84,
+        activeCases: 73,
+        discharged: 10,
+        death: 1,
+    },
+    {
+        state: 'bauchi',
+        confirmedCases: 83,
+        activeCases: 77,
+        discharged: 6,
+        death: 0,
+    },
+    {
+        state: 'sokoto',
+        confirmedCases: 67,
+        activeCases: 58,
+        discharged: 1,
+        death: 8,
+    },
+    {
+        state: 'edo',
+        confirmedCases: 65,
+        activeCases: 51,
+        discharged: 10,
+        death: 4,
+    },
+    {
+        state: 'oyo',
+        confirmedCases: 44,
+        activeCases: 33,
+        discharged: 9,
+        death: 2,
+    },
+    {
+        state: 'jigawa',
+        confirmedCases: 39,
+        activeCases: 38,
+        discharged: 0,
+        death: 1,
+    },
+    {
+        state: 'osun',
+        confirmedCases: 37,
+        activeCases: 3,
+        discharged: 30,
+        death: 4,
+    },
+    {
+        state: 'zamfara',
+        confirmedCases: 27,
+        activeCases: 26,
+        discharged: 0,
+        death: 1,
+    },
+    {
+        state: 'delta',
+        confirmedCases: 17,
+        activeCases: 13,
+        discharged: 2,
+        death: 2,
+    },
+    {
+        state: 'akwaibom',
+        confirmedCases: 16,
+        activeCases: 4,
+        discharged: 10,
+        death: 2,
+    },
+    {
+        state: 'kwara',
+        confirmedCases: 16,
+        activeCases: 8,
+        discharged: 8,
+        death: 0,
+    },
+    {
+        state: 'taraba',
+        confirmedCases: 15,
+        activeCases: 15,
+        discharged: 0,
+        death: 0,
+    },
+    {
+        state: 'rivers',
+        confirmedCases: 14,
+        activeCases: 10,
+        discharged: 2,
+        death: 2,
+    },
+    {
+        state: 'adamawa',
+        confirmedCases: 14,
+        activeCases: 14,
+        discharged: 0,
+        death: 0,
+    },
+    {
+        state: 'yobe',
+        confirmedCases: 13,
+        activeCases: 12,
+        discharged: 0,
+        death: 1,
+    },
+    {
+        state: 'ondo',
+        confirmedCases: 13,
+        activeCases: 10,
+        discharged: 3,
+        death: 0,
+    },
+    {
+        state: 'kebbi',
+        confirmedCases: 13,
+        activeCases: 13,
+        discharged: 0,
+        death: 0,
+    },
+    {
+        state: 'ekiti',
+        confirmedCases: 12,
+        activeCases: 9,
+        discharged: 2,
+        death: 1,
+    },
+    {
+        state: 'nasarawa',
+        confirmedCases: 11,
+        activeCases: 10,
+        discharged: 0,
+        death: 1,
+    },
+    {
+        state: 'enugu',
+        confirmedCases: 8,
+        activeCases: 6,
+        discharged: 2,
+        death: 0,
+    },
+    {
+        state: 'bayelsa',
+        confirmedCases: 5,
+        activeCases: 5,
+        discharged: 0,
+        death: 0,
+    },
+    {
+        state: 'ebonyi',
+        confirmedCases: 5,
+        activeCases: 5,
+        discharged: 0,
+        death: 0,
+    },
+    {
+        state: 'plateau',
+        confirmedCases: 4,
+        activeCases: 4,
+        discharged: 0,
+        death: 0,
+    },
+    {
+        state: 'niger',
+        confirmedCases: 4,
+        activeCases: 3,
+        discharged: 1,
+        death: 0,
+    },
+    {
+        state: 'benue',
+        confirmedCases: 2,
+        activeCases: 2,
+        discharged: 0,
+        death: 0,
+    },
+    {
+        state: 'imo',
+        confirmedCases: 2,
+        activeCases: 1,
+        discharged: 1,
+        death: 0,
+    },
+    {
+        state: 'abia',
+        confirmedCases: 2,
+        activeCases: 1,
+        discharged: 1,
+        death: 0,
+    },
+    {
+        state: 'anambra',
+        confirmedCases: 1,
+        activeCases: 0,
+        discharged: 1,
+        death: 0,
+    },
+];
+
+module.exports = {
+    statesTimeline,
+    newData,
+};
