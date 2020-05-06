@@ -26,11 +26,11 @@ The endpoints to the API is described below.
     {
         "data":
         {
-            "confirmedCases": 2802,
-            "activeCases": 2292,
-            "discharged": 417,
-            "death": 93,
-            "samplesTested": 18536
+            "confirmedCases": Number,
+            "activeCases": Number,
+            "discharged": Number,
+            "death": Number,
+            "samplesTested": Number
         }
     }
 
@@ -48,18 +48,18 @@ The endpoints to the API is described below.
         "data":
             [
                 {
-                    "state": "lagos",
-                    "confirmedCases": 1183,
-                    "activeCases": 892,
-                    "discharged": 261,
-                    "death": 30
+                    "state": String,
+                    "confirmedCases": Number,
+                    "activeCases": Number,
+                    "discharged": Number,
+                    "death": Number
                 },
                 {
-                    "state": "kano",
-                    "confirmedCases": 365,
-                    "activeCases": 357,
-                    "discharged": 0,
-                    "death": 8
+                    "state": String,
+                    "confirmedCases": Number,
+                    "activeCases": Number,
+                    "discharged": Number,
+                    "death": Number
                 },
                 ....
             ]
@@ -78,11 +78,11 @@ The endpoints to the API is described below.
     {
         "data":
             {
-                "state": "lagos",
-                "confirmedCases": 1183,
-                "activeCases": 892,
-                "discharged": 261,
-                "death": 30
+                "state": String,
+                "confirmedCases": Number,
+                "activeCases": Number,
+                "discharged": Number,
+                "death": Number
             }
     }
 
