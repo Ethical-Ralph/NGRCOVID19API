@@ -6,7 +6,6 @@ const { subtractDayFromDate } = require('../utils/utils');
  */
 const getTimelines = async (from, to) => {
     const query = from && to ? { date: { $gte: from, $lte: to } } : {};
-    console.log(query);
     try {
         const data = await Timeline.find(query).select('-_id');
         return data;
