@@ -1,57 +1,63 @@
-const { State } = require('../database')
-const cheerio = require('cheerio')
-const rp = require('request-promise')
-const { clean } = require('../utils/utils')
+const { State } = require('../database');
+const cheerio = require('cheerio');
+const rp = require('request-promise');
+const { clean } = require('../utils/utils');
 
 /**
- * gets states latest data from database
- * @returns {object} Lastest Data
+ * gets states data from database
+ * @returns {object}  Data
  */
 const getStateTotals = async () => {
-  try {
-    const StateTotals = await State.find({}).select('-_id')
-    return StateTotals
-  } catch (error) {
-    throw error
-  }
-}
+    try {
+        const StateTotals = await State.find({}).select('-_id');
+        return StateTotals;
+    } catch (error) {
+        throw error;
+    }
+};
+
+/**
+ * gets a state data from database
+ * @param {string} state name
+ * @returns {object}  Data
+ */
 const getStateTotal = async (state) => {
-  try {
-    const StateTotal = await State.findOne({ state }).select('-_id')
-    return StateTotal
-  } catch (error) {
-    throw error
-  }
-}
+    try {
+        const StateTotal = await State.findOne({ state }).select('-_id');
+        return StateTotal;
+    } catch (error) {
+        throw error;
+    }
+};
 
 /**
  * Scraps new data from NCDC
  * @returns {object}
  */
 const fetchNewStateData = async () => {
-  const raw = await rp('https://covid19.ncdc.gov.ng/')
-  const $ = cheerio.load(raw)
+    const raw = await rp('https://covid19.ncdc.gov.ng/');
+    const $ = cheerio.load(raw);
 
-  let result = []
+    let result = [];
 
-  $('#custom1 > tbody')
-    .find('tr')
-    .each((i, e) => {
-      const td = $(e).find('td')
-      const data = {
-        state: clean($(td[0]).text()),
-        confirmedCases: clean($(td[1]).text()),
-        activeCases: clean($(td[2]).text()),
-        discharged: clean($(td[3]).text()),
-        death: clean($(td[4]).text()),
-      }
-      result[i] = data
-    })
+    $('#custom1 > tbody')
+        .find('tr')
+        .each((i, e) => {
+            const td = $(e).find('td');
+            const data = {
+                state: clean($(td[0]).text()),
+                confirmedCases: clean($(td[1]).text()),
+                activeCases: clean($(td[2]).text()),
+                discharged: clean($(td[3]).text()),
+                death: clean($(td[4]).text()),
+            };
+            result[i] = data;
+        });
 
-  const filter = result.filter((s) => s.state.length !== 0)
+    const filter = result.filter((s) => s.state.length !== 0);
 
-  return filter
-}
+    return filter;
+};
 
 /**
  * Saves new totals
@@ -59,28 +65,28 @@ const fetchNewStateData = async () => {
  * @return {object} Saved Data
  */
 const saveNewData = async (params) => {
-  try {
-    const newTotals = await State.insertMany(params)
-    return newTotals
-  } catch (error) {
-    throw error
-  }
-}
+    try {
+        const newTotals = await State.insertMany(params);
+        return newTotals;
+    } catch (error) {
+        throw error;
+    }
+};
 
 /**
- * Deletes totals
+ * Deletes totals in database
  */
 const deleteOldTotals = async () => {
-  return State.deleteMany({}, (err) => {
-    if (err) return false
-    return true
-  })
-}
+    return State.deleteMany({}, (err) => {
+        if (err) return false;
+        return true;
+    });
+};
 
 module.exports = {
-  getStateTotals,
-  getStateTotal,
-  fetchNewStateData,
-  saveNewData,
-  deleteOldTotals,
-}
+    getStateTotals,
+    getStateTotal,
+    fetchNewStateData,
+    saveNewData,
+    deleteOldTotals,
+};

@@ -3,6 +3,9 @@ const { subtractDayFromDate } = require('../utils/utils');
 
 /**
  * Fetches all timeline data from database
+ * @param {object} from starting date
+ * @param {object} to end date
+ * @return {array} timeline data
  */
 const getTimelines = async (from, to) => {
     const query = from && to ? { date: { $gte: from, $lte: to } } : {};
