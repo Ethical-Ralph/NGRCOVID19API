@@ -1,46 +1,54 @@
 {
-    "name": "COVID19-API-NIGERIA",
-    "version": "1.0.0",
-    "description": "nigeria covid-19 api",
-    "main": "index.js",
-    "scripts": {
-        "test": "jest",
-        "server": "node ./src/index",
-        "prod": "NODE_ENV=production npm run server",
-        "dev": "NODE_ENV=development npm run server",
-        "watch:dev": "nodemon",
-        "start": "npm run prod"
-    },
-    "author": "Akinola Raphael",
-    "license": "ISC",
-    "dependencies": {
-        "@hapi/joi": "^17.1.1",
-        "cheerio": "^1.0.0-rc.3",
-        "dotenv": "^8.2.0",
-        "express": "^4.17.1",
-        "moment": "^2.25.0",
-        "mongoose": "^5.9.9",
-        "node-cron": "^2.0.3",
-        "nodemailer": "^6.4.6",
-        "request": "^2.88.2",
-        "request-promise": "^4.2.5"
-    },
-    "nodemonConfig": {
-        "exec": "npm run dev",
-        "watch": [
-            "./src/*"
-        ],
-        "ignore": [
-            "**/__test__/**",
-            "*.test.js",
-            "*.spec.js"
-        ]
-    },
-    "jest": {
-        "testEnvironment": "node"
-    },
-    "devDependencies": {
-        "jest": "^25.4.0",
-        "nodemon": "^2.0.3"
+  "name": "COVID19-API-NIGERIA",
+  "version": "1.0.0",
+  "description": "nigeria covid-19 api",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "server": "node ./src/index",
+    "prod": "NODE_ENV=production npm run server",
+    "dev": "NODE_ENV=development npm run server",
+    "watch:dev": "nodemon",
+    "start": "npm run prod"
+  },
+  "author": "Akinola Raphael",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "moment": "^2.25.0",
+    "mongoose": "^5.9.9",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.4.6",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  },
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": [
+      "./src/*"
+    ],
+    "ignore": [
+      "**/__test__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
+    "nodemon": "^2.0.3",
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
     }
+  }
 }

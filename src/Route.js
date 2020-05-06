@@ -1,5 +1,5 @@
-const express = require("express");
-const Controller = require("./Controller");
+const express = require('express')
+const Controller = require('./Controller')
 
 const app = express.Router()
 
@@ -9,7 +9,6 @@ app.get('/states', Controller.getAllStatesTotal)
 
 app.get('/states/:state', Controller.getStateTotal)
 
-app.get('/timeline', Controller.timeline)
+app.get('/timelines', Controller.timeline)
 
-
-module.exports = app;
+module.exports = app

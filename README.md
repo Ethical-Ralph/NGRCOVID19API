@@ -1,10 +1,11 @@
 # NIGERIA COVID19 API
 
-This is a full covid19 API for nigeria with full timeline. 
+This is a full covid19 API for nigeria with full timeline.
 
-Source: 
-  - [NCDC](https://covid19.ncdc.gov.ng)
-  - [Wikipedia](https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Nigeria)
+Source:
+
+- [NCDC](https://covid19.ncdc.gov.ng)
+- [Wikipedia](https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Nigeria)
 
 Live at [`https://covid19ngr.herokuapp.com`](https://covid19ngr.herokuapp.com)
 
@@ -32,7 +33,7 @@ The endpoints to the API is described below.
             "samplesTested": 18536
         }
     }
-   
+
 ## Get latest totals for all states
 
 ### Request
@@ -45,15 +46,15 @@ The endpoints to the API is described below.
 
     {
         "data":
-          [
-              {
-                  "state": "lagos",
-                  "confirmedCases": 1183,
-                  "activeCases": 892,
-                  "discharged": 261,
-                  "death": 30
-               },
-               {
+            [
+                {
+                    "state": "lagos",
+                    "confirmedCases": 1183,
+                    "activeCases": 892,
+                    "discharged": 261,
+                    "death": 30
+                },
+                {
                     "state": "kano",
                     "confirmedCases": 365,
                     "activeCases": 357,
@@ -63,8 +64,8 @@ The endpoints to the API is described below.
                 ...
             ]
      }
-     
- ## Get latest totals for a state
+
+## Get latest totals for a state
 
 ### Request
 
@@ -82,10 +83,10 @@ The endpoints to the API is described below.
                 "activeCases": 892,
                 "discharged": 261,
                 "death": 30
-             }
-     }
-    
- ## Get timeline
+            }
+    }
+
+## Get timeline
 
 ### Request
 
@@ -97,34 +98,35 @@ The endpoints to the API is described below.
 
     {
         "data":
-          [
-              {
-                  "dailyConfirmed": 1,
-                  "dailyDeceased": 0,
-                  "dailyRecovered": 0,
-                  "date": "2020-02-27",
-                  "totalConfirmed": 1,
-                  "totalDeath": 0,
-                  "totalDischarged": 0
-              },
-              {
-                  "dailyConfirmed": 0,
-                  "dailyDeceased": 0,
-                  "dailyRecovered": 0,
-                  "date": "2020-02-28",
-                  "totalConfirmed": 1,
-                  "totalDeath": 0,
-                  "totalDischarged": 0
-              },
-              ...
-          ]
+            [
+                {
+                    "dailyConfirmed": 1,
+                    "dailyDeceased": 0,
+                    "dailyRecovered": 0,
+                    "date": "2020-02-27",
+                    "totalConfirmed": 1,
+                    "totalDeath": 0,
+                    "totalDischarged": 0
+                },
+                {
+                    "dailyConfirmed": 0,
+                    "dailyDeceased": 0,
+                    "dailyRecovered": 0,
+                    "date": "2020-02-28",
+                    "totalConfirmed": 1,
+                    "totalDeath": 0,
+                    "totalDischarged": 0
+                },
+                ...
+            ]
       }
-   
+
 ## Get timeline with date range
 
 ### Query
-  - from = `Date` format: YYYY-MM-DD
-  - to = `Date` format: YYYY-MM-DD
+
+- from = `Date` format: YYYY-MM-DD
+- to = `Date` format: YYYY-MM-DD
 
 ### Request
 
@@ -137,35 +139,35 @@ The endpoints to the API is described below.
 
     {
         "data":
-          [
-              {
-                  "dailyConfirmed":0,
-                  "dailyDeceased":0,
-                  "dailyRecovered":0,
-                  "date":"2020-02-29T00:00:00.000Z",
-                  "totalConfirmed":1,
-                  "totalDeath":0,
-                  "totalDischarged":0
-              },
-              {
-                  "dailyConfirmed":0,
-                  "dailyDeceased":0,
-                  "dailyRecovered":0,
-                  "date":"2020-03-01T00:00:00.000Z",
-                  "totalConfirmed":1,
-                  "totalDeath":0,
-                  "totalDischarged":0
-              },
-              {
-                  "dailyConfirmed":0,
-                  "dailyDeceased":0,
-                  "dailyRecovered":0,
-                  "date":"2020-03-02T00:00:00.000Z",
-                  "totalConfirmed":1,
-                  "totalDeath":0,
-                  "totalDischarged":0
-              }
-           ]
+            [
+                {
+                    "dailyConfirmed":0,
+                    "dailyDeceased":0,
+                    "dailyRecovered":0,
+                    "date":"2020-02-29T00:00:00.000Z",
+                    "totalConfirmed":1,
+                    "totalDeath":0,
+                    "totalDischarged":0
+                },
+                {
+                    "dailyConfirmed":0,
+                    "dailyDeceased":0,
+                    "dailyRecovered":0,
+                    "date":"2020-03-01T00:00:00.000Z",
+                    "totalConfirmed":1,
+                    "totalDeath":0,
+                    "totalDischarged":0
+                },
+                {
+                    "dailyConfirmed":0,
+                    "dailyDeceased":0,
+                    "dailyRecovered":0,
+                    "date":"2020-03-02T00:00:00.000Z",
+                    "totalConfirmed":1,
+                    "totalDeath":0,
+                    "totalDischarged":0
+                }
+            ]
      }
 
 # Contribution
@@ -179,9 +181,7 @@ Read this guide [The beginner's guide to contributing to a GitHub project](https
 Install the app, write your feature and make your pull request.
 
 # Todo
-  - Timeline for all states
-  - Tests
-  - Send mail to admin if cron job fails
 
-
-
+- Timeline for all states
+- Tests
+- Send mail to admin if cron job fails

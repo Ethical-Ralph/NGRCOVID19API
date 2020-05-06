@@ -1,25 +1,27 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-
-const stateSchema = new Schema({
+const stateSchema = new Schema(
+  {
     state: {
-        type: String
+      type: String,
     },
-    confiredCases: {
-        type: Number
+    confirmedCases: {
+      type: Number,
     },
 
     activeCases: {
-        type: Number
+      type: Number,
     },
     discharged: {
-        type: Number
+      type: Number,
     },
     death: {
-        type: Number
-    }
-}, { versionKey: false })
+      type: Number,
+    },
+  },
+  { versionKey: false },
+)
 
 const stateModel = mongoose.model('State', stateSchema)
 
