@@ -300,4 +300,4 @@ Create an issue [here](https://github.com/Ethical-Ralph/NGRCOVID19API/issues)
 
 # Todo
 
--   Tests
+-   Writing Tests
