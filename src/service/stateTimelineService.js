@@ -23,6 +23,7 @@ const getTimelines = async (date) => {
  * @return {object} timeline data
  */
 const getTimelineForState = async (state) => {
+    state = String(state).toLowerCase();
     try {
         const data = await StateTimeline.find({ state })
             .select('confirmed')

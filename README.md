@@ -86,7 +86,7 @@ The endpoints to the API is described below.
             }
     }
 
-## Get timeline
+## Get national timeline
 
 ### Request
 
@@ -119,9 +119,9 @@ The endpoints to the API is described below.
                 },
                 ...
             ]
-      }
+    }
 
-## Get timeline with date range
+## Get national timeline with date range
 
 ### Query
 
@@ -169,6 +169,64 @@ The endpoints to the API is described below.
                 }
             ]
      }
+
+## Get timeline for all states
+
+### Request
+
+`GET /api/timelines/states`
+
+    curl -i -H 'Accept: application/json' https://covid19ngr.herokuapp.com/api/timelines/states/
+
+### Response
+
+    {
+        "data":
+            [
+                {
+                    "state": String,
+                    "confirmed": [
+                        {
+                            "date": Date,
+                            "confirmed": Number,
+                            "totalConfirmed": Number
+                        }
+                    ]
+                }
+                ...
+                ...
+            ]
+    }
+
+## Get timeline for a state
+
+### Params
+
+-   statename = `String`
+
+### Request
+
+`GET /api/timelines/:statename`
+
+    curl -i -H 'Accept: application/json' https://covid19ngr.herokuapp.com/api/timelines/states/:statename
+
+### Response
+
+    {
+        "data":
+            [
+                {
+                    "state": String,
+                    "confirmed": [
+                        {
+                            "date": Date,
+                            "confirmed": Number,
+                            "totalConfirmed": Number
+                        }
+                    ]
+                }
+            ]
+    }
 
 # Contribution
 

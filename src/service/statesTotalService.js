@@ -22,6 +22,7 @@ const getStateTotals = async () => {
  * @returns {object}  Data
  */
 const getStateTotal = async (state) => {
+    state = String(state).toLowerCase();
     try {
         const stateTotal = await StateTotal.findOne({ state }).select('-_id');
         return stateTotal;
