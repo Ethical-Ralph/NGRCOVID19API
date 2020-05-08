@@ -63,7 +63,7 @@ const scheduleToGetStateData = () => {
 
 const scheduleToCreateTimeline = () => {
     //Runs job every day at 1:00 AM
-    cron.schedule('* 1 * * *', async () => {
+    cron.schedule('0 1 * * *', async () => {
         try {
             const newTotals = await totalsService.getTotals();
             const lastTimelineDate = subtractDayFromDate(2);
