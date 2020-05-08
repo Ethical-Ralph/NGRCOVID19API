@@ -1,4 +1,4 @@
-const { State } = require('../database');
+const { StateTotal } = require('../database');
 const cheerio = require('cheerio');
 const rp = require('request-promise');
 const { clean } = require('../utils/utils');
@@ -9,8 +9,8 @@ const { clean } = require('../utils/utils');
  */
 const getStateTotals = async () => {
     try {
-        const StateTotals = await State.find({}).select('-_id');
-        return StateTotals;
+        const stateTotals = await StateTotal.find({}).select('-_id');
+        return stateTotals;
     } catch (error) {
         throw error;
     }
@@ -23,8 +23,8 @@ const getStateTotals = async () => {
  */
 const getStateTotal = async (state) => {
     try {
-        const StateTotal = await State.findOne({ state }).select('-_id');
-        return StateTotal;
+        const stateTotal = await StateTotal.findOne({ state }).select('-_id');
+        return stateTotal;
     } catch (error) {
         throw error;
     }
@@ -66,7 +66,7 @@ const fetchNewStateData = async () => {
  */
 const saveNewData = async (params) => {
     try {
-        const newTotals = await State.insertMany(params);
+        const newTotals = await StateTotal.insertMany(params);
         return newTotals;
     } catch (error) {
         throw error;
@@ -77,7 +77,7 @@ const saveNewData = async (params) => {
  * Deletes totals in database
  */
 const deleteOldTotals = async () => {
-    return State.deleteMany({}, (err) => {
+    return StateTotal.deleteMany({}, (err) => {
         if (err) return false;
         return true;
     });

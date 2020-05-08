@@ -1,4 +1,4 @@
-const { Timeline } = require('../database');
+const { NationalTimeline } = require('../database');
 const { subtractDayFromDate } = require('../utils/utils');
 
 /**
@@ -10,7 +10,7 @@ const { subtractDayFromDate } = require('../utils/utils');
 const getTimelines = async (from, to) => {
     const query = from && to ? { date: { $gte: from, $lte: to } } : {};
     try {
-        const data = await Timeline.find(query).select('-_id');
+        const data = await NationalTimeline.find(query).select('-_id');
         return data;
     } catch (error) {
         throw error;
@@ -24,7 +24,9 @@ const getTimelines = async (from, to) => {
  */
 const getTimelineByDate = async (date) => {
     try {
-        const timeline = await Timeline.findOne({ date }).select('-_id');
+        const timeline = await NationalTimeline.findOne({ date }).select(
+            '-_id',
+        );
         return timeline;
     } catch (error) {
         throw error;
@@ -36,20 +38,20 @@ const getTimelineByDate = async (date) => {
  * @param {object} previousTimeline Previously saved timeline
  * @param {object} previousTotal previous new totals
  */
-const createTimeline = async (previousTimeline, previousTotals) => {
+const createTimeline = async (previousTimeline, newTotals) => {
     let newTimeline = {};
     newTimeline['dailyConfirmed'] =
-        previousTotals.confirmedCases - previousTimeline.totalConfirmed;
+        newTotals.confirmedCases - previousTimeline.totalConfirmed;
     newTimeline['dailyDeceased'] =
-        previousTotals.death - previousTimeline.totalDeath;
+        newTotals.death - previousTimeline.totalDeath;
     newTimeline['dailyRecovered'] =
-        previousTotals.discharged - previousTimeline.totalDischarged;
+        newTotals.discharged - previousTimeline.totalDischarged;
     newTimeline['date'] = subtractDayFromDate(1);
-    newTimeline['totalConfirmed'] = previousTotals.confirmedCases;
-    newTimeline['totalDeath'] = previousTotals.death;
-    newTimeline['totalDischarged'] = previousTotals.discharged;
+    newTimeline['totalConfirmed'] = newTotals.confirmedCases;
+    newTimeline['totalDeath'] = newTotals.death;
+    newTimeline['totalDischarged'] = newTotals.discharged;
     try {
-        const data = await new Timeline(newTimeline).save();
+        const data = await new NationalTimeline(newTimeline).save();
         return data;
     } catch (error) {
         throw error;

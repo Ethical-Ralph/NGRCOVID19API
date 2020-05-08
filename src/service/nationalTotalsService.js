@@ -1,4 +1,4 @@
-const { Totals } = require('../database');
+const { NationalTotal } = require('../database');
 const cheerio = require('cheerio');
 const rp = require('request-promise');
 const { clean } = require('../utils/utils');
@@ -9,7 +9,7 @@ const { clean } = require('../utils/utils');
  */
 const getTotals = async () => {
     try {
-        const totals = await Totals.find({}).select('-_id');
+        const totals = await NationalTotal.find({}).select('-_id');
         return totals[0];
     } catch (error) {
         throw error;
@@ -56,7 +56,7 @@ const fetchNewLatest = async () => {
  */
 const saveNewData = async (param) => {
     try {
-        const newTotals = new Totals(param);
+        const newTotals = new NationalTotal(param);
         const data = await newTotals.save();
         return data;
     } catch (error) {
@@ -68,7 +68,7 @@ const saveNewData = async (param) => {
  * Deletes old totals
  */
 const deleteOldTotals = () => {
-    return Totals.deleteMany({}, (err) => {
+    return NationalTotal.deleteMany({}, (err) => {
         if (err) return false;
         return true;
     });

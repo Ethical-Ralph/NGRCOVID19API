@@ -14,6 +14,7 @@ const MONGODB_URL = isProd
     : process.env.MONGODB_URL_LOCAL;
 
 mongoose.connect(MONGODB_URL, {
+    useFindAndModify: false,
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -29,7 +30,7 @@ app.all('*', (req, res) => {
     res.send('I think you are lost');
 });
 
-mongoose.connection.once('open', () => {
+mongoose.connection.once('open', async () => {
     console.log('mongodb connected');
 });
 

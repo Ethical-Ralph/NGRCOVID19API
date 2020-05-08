@@ -1,56 +1,80 @@
-const totalsService = require('./service/totalsService')
-const statesService = require("./service/statesService");
-const timeLineService = require('./service/timelineService');
+const nationalTotalsService = require('./service/nationalTotalsService');
+const statesTotalService = require('./service/statesTotalService');
+const nationalTimelineService = require('./service/nationalTimelineService');
+const stateTimelineService = require('./service/stateTimelineService');
 
-
-const getTotals = async (req, res, next) => {
+const getNationalTotals = async (req, res, next) => {
     try {
-        let latestTotals = await totalsService.getTotals()
+        let data = await nationalTotalsService.getTotals();
         return res.json({
-            data: latestTotals
-        })
+            data,
+        });
     } catch (error) {
-        next(error)
+        next(error);
     }
-}
+};
 const getAllStatesTotal = async (req, res, next) => {
     try {
-        const stateTotals = await statesService.getStateTotals()
+        const data = await statesTotalService.getStateTotals();
         return res.json({
-            data: stateTotals
-        })
+            data,
+        });
     } catch (error) {
-        next(error)
+        next(error);
     }
-}
+};
 const getStateTotal = async (req, res, next) => {
-    const state = req.params.state
+    const state = req.params.state;
     try {
-        const stateTotal = await statesService.getStateTotal(state)
+        const data = await statesTotalService.getStateTotal(state);
         return res.json({
-            data: stateTotal
-        })
+            data,
+        });
     } catch (error) {
-        next(error)
+        next(error);
     }
-}
-const timeline = async (req, res, next) => {
-    const from = req.query.from || '';
-    const to = req.query.to || '';
+};
+const nationalTimeline = async (req, res, next) => {
+    const from = req.query.from;
+    const to = req.query.to;
     try {
-        const timeline = await timeLineService.getTimelines(from, to)
+        const data = await nationalTimelineService.getTimelines(from, to);
         return res.json({
-            data: timeline
-        })
+            data,
+        });
     } catch (error) {
-        next(error)
+        next(error);
     }
-}
+};
+const stateTimelines = async (req, res, next) => {
+    const date = req.query.date;
+    try {
+        const datas = await stateTimelineService.getTimelines(date);
+        return res.json({
+            data: datas,
+        });
+    } catch (error) {
+        next(error);
+    }
+};
 
+const timelineForState = async (req, res, next) => {
+    const state = req.params.state;
+    try {
+        const data = await stateTimelineService.getTimelineForState(state);
+        return res.json({
+            data,
+        });
+    } catch (error) {
+        next(error);
+    }
+};
 
 module.exports = {
-    getTotals,
+    getNationalTotals,
     getAllStatesTotal,
     getStateTotal,
-    timeline
-}
+    nationalTimeline,
+    stateTimelines,
+    timelineForState,
+};
