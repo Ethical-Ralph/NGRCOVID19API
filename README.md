@@ -295,6 +295,9 @@ This API uses
 -   [CheerioJs](http://cheerio.js.org/) - Analyze web pages using a jQuery-like syntax.
 -   You can view the package.json for more
 
+# Issues
+Create an issue [here](https://github.com/Ethical-Ralph/NGRCOVID19API/issues)
+
 # Todo
 
 -   Tests
