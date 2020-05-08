@@ -1,11 +1,11 @@
 # NIGERIA COVID19 API
 
-This is a full covid19 API for nigeria with full timeline.
+This is a full covid19 data API for nigeria with full timeline.
 
 Source:
 
-- [NCDC](https://covid19.ncdc.gov.ng)
-- [Wikipedia](https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Nigeria)
+-   [NCDC](https://covid19.ncdc.gov.ng)
+-   [Wikipedia](https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Nigeria)
 
 Live at [`https://covid19ngr.herokuapp.com`](https://covid19ngr.herokuapp.com)
 
@@ -26,11 +26,11 @@ The endpoints to the API is described below.
     {
         "data":
         {
-            "confirmedCases": 2802,
-            "activeCases": 2292,
-            "discharged": 417,
-            "death": 93,
-            "samplesTested": 18536
+            "confirmedCases": Number,
+            "activeCases": Number,
+            "discharged": Number,
+            "death": Number,
+            "samplesTested": Number
         }
     }
 
@@ -48,20 +48,20 @@ The endpoints to the API is described below.
         "data":
             [
                 {
-                    "state": "lagos",
-                    "confirmedCases": 1183,
-                    "activeCases": 892,
-                    "discharged": 261,
-                    "death": 30
+                    "state": String,
+                    "confirmedCases": Number,
+                    "activeCases": Number,
+                    "discharged": Number,
+                    "death": Number
                 },
                 {
-                    "state": "kano",
-                    "confirmedCases": 365,
-                    "activeCases": 357,
-                    "discharged": 0,
-                    "death": 8
+                    "state": String,
+                    "confirmedCases": Number,
+                    "activeCases": Number,
+                    "discharged": Number,
+                    "death": Number
                 },
-                ...
+                ....
             ]
      }
 
@@ -78,11 +78,11 @@ The endpoints to the API is described below.
     {
         "data":
             {
-                "state": "lagos",
-                "confirmedCases": 1183,
-                "activeCases": 892,
-                "discharged": 261,
-                "death": 30
+                "state": String,
+                "confirmedCases": Number,
+                "activeCases": Number,
+                "discharged": Number,
+                "death": Number
             }
     }
 
@@ -125,8 +125,8 @@ The endpoints to the API is described below.
 
 ### Query
 
-- from = `Date` format: YYYY-MM-DD
-- to = `Date` format: YYYY-MM-DD
+-   from = `Date` format: YYYY-MM-DD
+-   to = `Date` format: YYYY-MM-DD
 
 ### Request
 
@@ -182,6 +182,6 @@ Install the app, write your feature and make your pull request.
 
 # Todo
 
-- Timeline for all states
-- Tests
-- Send mail to admin if cron job fails
+-   Timeline for all states
+-   Tests
+-   Send mail to admin if cron job fails
