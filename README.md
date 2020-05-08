@@ -282,7 +282,11 @@ The endpoints to the API is described below.
 
 Wanna contribute? Amazing...
 
-First give this project a star.
+1. Give this project a star.
+
+2. Read this guide [The beginner's guide to contributing to a GitHub project](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/)
+
+3. Install the app, write your feature and make your pull request.
 
 This API uses
 
@@ -291,10 +295,9 @@ This API uses
 -   [CheerioJs](http://cheerio.js.org/) - Analyze web pages using a jQuery-like syntax.
 -   You can view the package.json for more
 
-Read this guide [The beginner's guide to contributing to a GitHub project](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/)
-
-Install the app, write your feature and make your pull request.
+# Issues
+Create an issue [here](https://github.com/Ethical-Ralph/NGRCOVID19API/issues)
 
 # Todo
 
--   Tests
+-   Writing Tests
