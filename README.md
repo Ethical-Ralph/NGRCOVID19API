@@ -54,14 +54,9 @@ The endpoints to the API is described below.
                     "discharged": Number,
                     "death": Number
                 },
-                {
-                    "state": String,
-                    "confirmedCases": Number,
-                    "activeCases": Number,
-                    "discharged": Number,
-                    "death": Number
-                },
-                ....
+                ...
+                ...
+                ...
             ]
      }
 
@@ -117,6 +112,8 @@ The endpoints to the API is described below.
                     "totalDeath": 0,
                     "totalDischarged": 0
                 },
+                ...
+                ...
                 ...
             ]
     }
@@ -195,6 +192,7 @@ The endpoints to the API is described below.
                 }
                 ...
                 ...
+                ...
             ]
     }
 
@@ -206,7 +204,7 @@ The endpoints to the API is described below.
 
 ### Request
 
-`GET /api/timelines/:statename`
+`GET /api/timelines/states/:statename`
 
     curl -i -H 'Accept: application/json' https://covid19ngr.herokuapp.com/api/timelines/states/:statename
 
@@ -228,11 +226,70 @@ The endpoints to the API is described below.
             ]
     }
 
+## Get states with confirmed cases on a particular day
+
+### Query
+
+-   date = `Date` format: YYYY-MM-DD
+
+### Request
+
+`GET /api/timelines/states?date=2020-05-05`
+
+    curl -i -H 'Accept: application/json' https://covid19ngr.herokuapp.com/api/timelines/states?date=2020-05-05
+
+### Response
+
+    {
+        "data":
+            [
+                {
+                    "state": "borno",
+                    "confirmed": [
+                        {
+                            "date": "2020-05-05T00:00:00.000Z",
+                            "confirmed": 6,
+                            "totalConfirmed": 106
+                        }
+                    ]
+                },
+                {
+                    "state": "bauchi",
+                    "confirmed": [
+                        {
+                            "date": "2020-05-05T00:00:00.000Z",
+                            "confirmed": 3,
+                            "totalConfirmed": 83
+                        }
+                    ]
+                },
+                {
+                    "state": "sokoto",
+                    "confirmed": [
+                        {
+                            "date": "2020-05-05T00:00:00.000Z",
+                            "confirmed": 1,
+                            "totalConfirmed": 67
+                        }
+                    ]
+                },
+                ...
+                ...
+        ]
+    }
+
 # Contribution
 
 Wanna contribute? Amazing...
 
-This API uses [Node.js](https://nodejs.org) and the [Express.Js](https://expressjs.com/) web application framework.
+First give this project a star.
+
+This API uses
+
+-   [Node.js](https://nodejs.org) - JavaScript Runtime.
+-   [Express.Js](https://expressjs.com/) - Web application framework.
+-   [CheerioJs](http://cheerio.js.org/) - Analyze web pages using a jQuery-like syntax.
+-   You can view the package.json for more
 
 Read this guide [The beginner's guide to contributing to a GitHub project](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/)
 
@@ -240,6 +297,4 @@ Install the app, write your feature and make your pull request.
 
 # Todo
 
--   Timeline for all states
 -   Tests
--   Send mail to admin if cron job fails
