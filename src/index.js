@@ -3,9 +3,12 @@ const mongoose = require('mongoose');
 const routes = require('./Route');
 const cronService = require('./service/cronService');
 const errorHandler = require('./utils/errorhandler');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
+
+app.use(cors());
 
 const isProd = process.env.NODE_ENV === 'production';
 
