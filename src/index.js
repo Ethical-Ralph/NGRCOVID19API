@@ -24,7 +24,7 @@ mongoose.connect(MONGODB_URL, {
 });
 
 app.get('/', (req, res) => {
-    res.send('COVID19 API FOR NIGERIA');
+    res.send('COVID-19 API FOR NIGERIA');
 });
 
 app.use('/api', routes);
