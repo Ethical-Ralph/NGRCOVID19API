@@ -34,7 +34,6 @@ app.all('*', (req, res) => {
 });
 
 mongoose.connection.once('open', async () => {
-    console.log(new Date());
     console.log('mongodb connected');
 });
 
