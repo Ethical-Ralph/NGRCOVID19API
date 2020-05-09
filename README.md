@@ -1,6 +1,6 @@
 # NIGERIA COVID19 API
 
-This is a full covid19 data API for nigeria with full timeline.
+This is a full covid-19 data API for nigeria with full timeline.
 
 Source:
 
