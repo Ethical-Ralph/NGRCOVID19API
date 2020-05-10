@@ -63,8 +63,8 @@ const scheduleToGetStateData = () => {
 };
 
 const scheduleToCreateTimeline = () => {
-    //Runs job every day at 1:05 AM
-    cron.schedule('5 1 * * *', async () => {
+    //Runs job every day at 00:10 GMT
+    cron.schedule('10 0 * * *', async () => {
         try {
             const newTotals = await nationalTotalsService.getTotals();
             const lastTimelineDate = subtractDayFromDate(2);
@@ -82,9 +82,9 @@ const scheduleToCreateTimeline = () => {
     });
 };
 
-//Runs job every day at 1:05 AM
+//Runs job every day at 00:10 GMT
 const scheduleToCreateStateTimeline = () => {
-    cron.schedule('5 1 * * *', async () => {
+    cron.schedule('10 0 * * *', async () => {
         try {
             const newData = await statesTotalService.getStateTotals();
             newData.forEach(async (val, i) => {
