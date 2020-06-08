@@ -110,7 +110,7 @@ const scheduleToCreateStateTimeline = () => {
 const startCronJobs = () => {
     scheduleToGetTotalData();
     scheduleToGetStateData();
-    // scheduleToCreateTimeline();
+    scheduleToCreateTimeline();
     scheduleToCreateStateTimeline();
 };
 

@@ -4,7 +4,7 @@
     "description": "nigeria covid-19 api",
     "main": "index.js",
     "scripts": {
-        "test": "mocha ./src/test",
+        "test": "NODE_ENV=production mocha ./src/test",
         "server": "node ./src/index",
         "prod": "NODE_ENV=production npm run server",
         "dev": "NODE_ENV=development npm run server",

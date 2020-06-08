@@ -26,7 +26,6 @@ describe('All Routes', () => {
         chai.request(server)
             .get(api + 'totals')
             .end((err, res) => {
-                const data = res.body.data;
                 res.body.data.confirmedCases.should.be.a('number');
                 res.body.data.activeCases.should.be.a('number');
                 res.body.data.discharged.should.be.a('number');
@@ -62,6 +61,7 @@ describe('All Routes', () => {
         chai.request(server)
             .get(api + 'timelines')
             .end((err, res) => {
+                expect(res.body).to.be.an('object').that.is.not.empty;
                 expect(res.body.data).to.be.an('array').that.is.not.empty;
                 done();
             });
@@ -71,7 +71,9 @@ describe('All Routes', () => {
         chai.request(server)
             .get(api + 'timelines' + '/states')
             .end((err, res) => {
+                expect(res.body).to.be.an('object').that.is.not.empty;
                 expect(res.body.data).to.be.an('array').that.is.not.empty;
+                expect(res.body.data).to.have.be.of.length(36);
                 done();
             });
     });
@@ -80,6 +82,7 @@ describe('All Routes', () => {
         chai.request(server)
             .get(api + 'timelines' + '/states' + '/lagos')
             .end((err, res) => {
+                expect(res.body).to.be.an('object').that.is.not.empty;
                 expect(res.body.data).to.be.an('array').that.is.not.empty;
                 done();
             });

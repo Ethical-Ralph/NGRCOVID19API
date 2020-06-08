@@ -40,16 +40,18 @@ const getTimelineByDate = async (date) => {
  */
 const createTimeline = async (previousTimeline, newTotals) => {
     let newTimeline = {};
-    newTimeline['dailyConfirmed'] =
-        newTotals.confirmedCases - previousTimeline.totalConfirmed;
-    newTimeline['dailyDeceased'] =
-        newTotals.death - previousTimeline.totalDeath;
-    newTimeline['dailyRecovered'] =
-        newTotals.discharged - previousTimeline.totalDischarged;
+    // newTimeline['dailyConfirtomed'] =
+    //     newTotals.confirmedCases - previousTimeline.totalConfirmed;
+    // newTimeline['dailyDeceased'] =
+    //     newTotals.death - previousTimeline.totalDeath;
+    // newTimeline['dailyRecovered'] =
+    //     newTotals.discharged - previousTimeline.totalDischarged;
     newTimeline['date'] = subtractDayFromDate(1);
+    newTimeline['total'] =
+        newTotals.confirmedCases - previousTimeline.totalConfirmed;
     newTimeline['totalConfirmed'] = newTotals.confirmedCases;
-    newTimeline['totalDeath'] = newTotals.death;
-    newTimeline['totalDischarged'] = newTotals.discharged;
+    // newTimeline['totalDeath'] = newTotals.death;
+    // newTimeline['totalDischarged'] = newTotals.discharged;
     try {
         const data = await new NationalTimeline(newTimeline).save();
         return data;

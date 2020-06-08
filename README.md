@@ -95,22 +95,19 @@ The endpoints to the API is described below.
         "data":
             [
                 {
-                    "dailyConfirmed": 1,
-                    "dailyDeceased": 0,
-                    "dailyRecovered": 0,
-                    "date": "2020-02-27",
-                    "totalConfirmed": 1,
-                    "totalDeath": 0,
-                    "totalDischarged": 0
+                "date": "2020-02-27T00:00:00.000Z",
+                "total": 1,
+                "totalConfirmed": 1
                 },
                 {
-                    "dailyConfirmed": 0,
-                    "dailyDeceased": 0,
-                    "dailyRecovered": 0,
-                    "date": "2020-02-28",
-                    "totalConfirmed": 1,
-                    "totalDeath": 0,
-                    "totalDischarged": 0
+                "date": "2020-03-09T00:00:00.000Z",
+                "total": 1,
+                "totalConfirmed": 2
+                },
+                {
+                "date": "2020-03-17T00:00:00.000Z",
+                "total": 1,
+                "totalConfirmed": 3
                 },
                 ...
                 ...
@@ -130,7 +127,7 @@ The endpoints to the API is described below.
 `GET /api/timelines?from=2020-02-29&to=2020-03-02`
 
     curl -i -H 'Accept: application/json' \
-    https://covid19ngr.herokuapp.com/api/timelines?from=2020-02-29&to=2020-03-02
+    https://covid19ngr.herokuapp.com/api/timelines?from=2020-02-27&to=2020-03-17
 
 ### Response
 
@@ -138,34 +135,23 @@ The endpoints to the API is described below.
         "data":
             [
                 {
-                    "dailyConfirmed":0,
-                    "dailyDeceased":0,
-                    "dailyRecovered":0,
-                    "date":"2020-02-29T00:00:00.000Z",
-                    "totalConfirmed":1,
-                    "totalDeath":0,
-                    "totalDischarged":0
-                },
-                {
-                    "dailyConfirmed":0,
-                    "dailyDeceased":0,
-                    "dailyRecovered":0,
-                    "date":"2020-03-01T00:00:00.000Z",
-                    "totalConfirmed":1,
-                    "totalDeath":0,
-                    "totalDischarged":0
-                },
-                {
-                    "dailyConfirmed":0,
-                    "dailyDeceased":0,
-                    "dailyRecovered":0,
-                    "date":"2020-03-02T00:00:00.000Z",
-                    "totalConfirmed":1,
-                    "totalDeath":0,
-                    "totalDischarged":0
-                }
-            ]
-     }
+
+"date": "2020-02-27T00:00:00.000Z",
+"total": 1,
+"totalConfirmed": 1
+},
+{
+"date": "2020-03-09T00:00:00.000Z",
+"total": 1,
+"totalConfirmed": 2
+},
+{
+"date": "2020-03-17T00:00:00.000Z",
+"total": 1,
+"totalConfirmed": 3
+}
+]
+}
 
 ## Get timeline for all states
 
