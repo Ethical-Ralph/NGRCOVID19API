@@ -12,6 +12,7 @@ const getTimelines = async (date) => {
             const byDate = filterByDate(data, date);
             return byDate;
         }
+        if (!data.length) throw new Error('Not Found');
         return filterData(data);
     } catch (error) {
         throw error;
@@ -25,10 +26,9 @@ const getTimelines = async (date) => {
 const getTimelineForState = async (state) => {
     state = String(state).toLowerCase();
     try {
-        const data = await StateTimeline.find({ state })
-            .select('confirmed')
-            .exec();
-        const cleaned = removeId(data[0].confirmed);
+        const data = await StateTimeline.find({ state }).select('data').exec();
+        if (!data.length) throw new Error('Not Found');
+        const cleaned = removeId(data[0].data);
         return cleaned;
     } catch (error) {
         throw error;
@@ -41,9 +41,9 @@ const getTimelineForState = async (state) => {
  */
 const lastTimelineForState = async (state) => {
     try {
-        const data = await StateTimeline.find({ state }).select('confirmed');
-        const confirmed = data[0].confirmed;
-        return confirmed[confirmed.length - 1];
+        const dataArr = await StateTimeline.find({ state }).select('data');
+        const data = dataArr[0].data;
+        return data[data.length - 1];
     } catch (error) {
         throw error;
     }
@@ -60,12 +60,12 @@ const createTimeline = async (state, data) => {
         if (!timeline) {
             const newStateTimeline = new StateTimeline();
             newStateTimeline.state = state;
-            newStateTimeline.confirmed.push(data);
+            newStateTimeline.data.push(data);
             return await newStateTimeline.save();
         }
         const stateTimeline = await StateTimeline.findOneAndUpdate(
             { state },
-            { $push: { confirmed: data } },
+            { $push: { data } },
         );
         return stateTimeline;
     } catch (error) {

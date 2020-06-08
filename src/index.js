@@ -5,6 +5,8 @@ const cronService = require('./service/cronService');
 const errorHandler = require('./utils/errorhandler');
 const cors = require('cors');
 require('dotenv').config();
+const { NationalTimeline, StateTimeline } = require('./database');
+const data = require('../newseed');
 
 const app = express();
 
@@ -29,11 +31,15 @@ app.get('/', (req, res) => {
 
 app.use('/api', routes);
 
-app.all('*', (req, res) => {
-    res.send('I think you are lost');
+app.all('*', (req, res, next) => {
+    res.status(404).send(next);
 });
 
 mongoose.connection.once('open', async () => {
+    // //    const aa = await NationalTimeline.insertMany(aaa)
+    // console.log(data)
+    // const aa = await StateTimeline.insertMany(data.seed)
+    //    console.log(aa)
     console.log('mongodb connected');
 });
 
@@ -49,8 +55,8 @@ app.use((req, res, next) => {
 
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, () => {
-    console.log('app live');
+app.listen(PORT, '0.0.0.0', () => {
+    console.log('app live at ' + PORT);
 });

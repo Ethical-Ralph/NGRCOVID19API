@@ -4,11 +4,10 @@ const Schema = mongoose.Schema;
 const stateTimelineSchema = new Schema(
     {
         state: String,
-        confirmed: [
+        data: [
             {
                 date: Date,
                 confirmed: Number,
-                totalConfirmed: Number,
             },
         ],
     },

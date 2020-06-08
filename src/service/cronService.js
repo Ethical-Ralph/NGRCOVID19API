@@ -13,7 +13,7 @@ const scheduleToGetTotalData = () => {
     let times = 0;
 
     //Runs job every 1 hour
-    cron.schedule('59 * * * *', async () => {
+    cron.schedule('30 * * * *', async () => {
         try {
             const newTotals = await nationalTotalsService.fetchNewLatest();
             const isValid = validateTotals(newTotals);
@@ -41,7 +41,7 @@ const scheduleToGetStateData = () => {
     let times = 0;
 
     //Runs job every 1 hour
-    cron.schedule('59 * * * *', async () => {
+    cron.schedule('30 * * * *', async () => {
         try {
             const newStateTotals = await statesTotalService.fetchNewStateData();
             const isValid = validateStateData(newStateTotals);
@@ -63,8 +63,8 @@ const scheduleToGetStateData = () => {
 };
 
 const scheduleToCreateTimeline = () => {
-    //Runs job every day at 00:25 AM GMT
-    cron.schedule('50 2 * * *', async () => {
+    //Runs job every day at 01:00 AM GMT
+    cron.schedule('00 2 * * *', async () => {
         try {
             const newTotals = await nationalTotalsService.getTotals();
             const lastTimelineDate = subtractDayFromDate(2);
@@ -82,9 +82,9 @@ const scheduleToCreateTimeline = () => {
     });
 };
 
-//Runs job every day at 00:25 AM GMT
+//Runs job every day at 01:00 AM GMT +1
 const scheduleToCreateStateTimeline = () => {
-    cron.schedule('50 2 * * *', async () => {
+    cron.schedule('0 0 * * *', async () => {
         try {
             const newData = await statesTotalService.getStateTotals();
             newData.forEach(async (val, i) => {
@@ -96,10 +96,10 @@ const scheduleToCreateStateTimeline = () => {
                 data.date = subtractDayFromDate(1);
                 data.confirmed =
                     val.confirmedCases - lastTimeline.totalConfirmed;
-                data.totalConfirmed = val.confirmedCases;
+                // data.totalConfirmed = val.confirmedCases;
                 if (data.confirmed === 0) return;
                 await stateTimelineService.createTimeline(state, data);
-                console.log('done', i, state);
+                console.log('done', state, data.confirmed);
             });
         } catch (error) {
             console.log(error);
@@ -110,7 +110,7 @@ const scheduleToCreateStateTimeline = () => {
 const startCronJobs = () => {
     scheduleToGetTotalData();
     scheduleToGetStateData();
-    scheduleToCreateTimeline();
+    // scheduleToCreateTimeline();
     scheduleToCreateStateTimeline();
 };
 

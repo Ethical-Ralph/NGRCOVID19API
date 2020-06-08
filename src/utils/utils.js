@@ -17,7 +17,6 @@ const removeId = (data) => {
         return {
             date: val.date,
             confirmed: val.confirmed,
-            totalConfirmed: val.totalConfirmed,
         };
     });
 };
@@ -27,18 +26,18 @@ const filterByDate = (data, date) => {
     date = new Date(date).toLocaleDateString();
 
     const vss = data.map((vals) => {
-        const filter = vals.confirmed.filter((dat) => {
+        const filter = vals.data.filter((dat) => {
             let newdate = new Date(dat.date).toLocaleDateString();
             return newdate === date;
         });
-        return { state: vals.state, confirmed: [...filter] };
+        return { state: vals.state, data: [...filter] };
     });
 
-    const vv = vss.filter((val) => val.confirmed.length !== 0);
+    const vv = vss.filter((val) => val.data.length !== 0);
     return vv.map((val) => {
         return {
             state: val.state,
-            confirmed: removeId(val.confirmed),
+            data: removeId(val.data),
         };
     });
 };
@@ -48,7 +47,7 @@ const filterData = (data) => {
     return data.map((val) => {
         return {
             state: val.state,
-            confirmed: removeId(val.confirmed),
+            data: removeId(val.data),
         };
     });
 };

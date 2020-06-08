@@ -182,11 +182,10 @@ The endpoints to the API is described below.
             [
                 {
                     "state": String,
-                    "confirmed": [
+                    "data": [
                         {
                             "date": Date,
                             "confirmed": Number,
-                            "totalConfirmed": Number
                         }
                     ]
                 }
@@ -215,11 +214,10 @@ The endpoints to the API is described below.
             [
                 {
                     "state": String,
-                    "confirmed": [
+                    "data": [
                         {
                             "date": Date,
                             "confirmed": Number,
-                            "totalConfirmed": Number
                         }
                     ]
                 }
@@ -245,11 +243,10 @@ The endpoints to the API is described below.
             [
                 {
                     "state": "borno",
-                    "confirmed": [
+                    "data": [
                         {
                             "date": "2020-05-05T00:00:00.000Z",
                             "confirmed": 6,
-                            "totalConfirmed": 106
                         }
                     ]
                 },
@@ -259,7 +256,6 @@ The endpoints to the API is described below.
                         {
                             "date": "2020-05-05T00:00:00.000Z",
                             "confirmed": 3,
-                            "totalConfirmed": 83
                         }
                     ]
                 },
@@ -269,7 +265,6 @@ The endpoints to the API is described below.
                         {
                             "date": "2020-05-05T00:00:00.000Z",
                             "confirmed": 1,
-                            "totalConfirmed": 67
                         }
                     ]
                 },
@@ -284,7 +279,7 @@ Wanna contribute? Amazing...
 
 1. Give this project a star.
 
-2. Read this guide [The beginner's guide to contributing to a GitHub project](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/)
+2. Fork the repo and Read this guide [The beginner's guide to contributing to a GitHub project](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/)
 
 3. Install the app, write your feature and make your pull request.
 
@@ -296,6 +291,7 @@ This API uses
 -   You can view the package.json for more
 
 # Issues
+
 Create an issue [here](https://github.com/Ethical-Ralph/NGRCOVID19API/issues)
 
 # Todo
