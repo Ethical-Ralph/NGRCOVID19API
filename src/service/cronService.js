@@ -71,6 +71,8 @@ const scheduleToCreateTimeline = () => {
             const previousTimeline = await nationalTimelineService.getTimelineByDate(
                 lastTimelineDate,
             );
+            if (newTotals.confirmedCases - previousTimeline.totalConfirmed)
+                return;
             await nationalTimelineService.createTimeline(
                 previousTimeline,
                 newTotals,
