@@ -29,6 +29,7 @@ app.all('*', (req, res, next) => {
     res.status(404).send(next());
 });
 
+//Cron Services
 cronService.startCronJobs();
 
 app.use(errorHandler(app));
