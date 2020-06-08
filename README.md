@@ -95,19 +95,19 @@ The endpoints to the API is described below.
         "data":
             [
                 {
-                "date": "2020-02-27T00:00:00.000Z",
-                "total": 1,
-                "totalConfirmed": 1
+                    "date": "2020-02-27T00:00:00.000Z",
+                    "total": 1,
+                    "totalConfirmed": 1
                 },
                 {
-                "date": "2020-03-09T00:00:00.000Z",
-                "total": 1,
-                "totalConfirmed": 2
+                    "date": "2020-03-09T00:00:00.000Z",
+                    "total": 1,
+                    "totalConfirmed": 2
                 },
                 {
-                "date": "2020-03-17T00:00:00.000Z",
-                "total": 1,
-                "totalConfirmed": 3
+                    "date": "2020-03-17T00:00:00.000Z",
+                    "total": 1,
+                    "totalConfirmed": 3
                 },
                 ...
                 ...
@@ -135,22 +135,22 @@ The endpoints to the API is described below.
         "data":
             [
                 {
+                    "date": "2020-02-27T00:00:00.000Z",
+                    "total": 1,
+                    "totalConfirmed": 1
+                },
+                {
+                    "date": "2020-03-09T00:00:00.000Z",
+                    "total": 1,
+                    "totalConfirmed": 2
+                },
+                {
+                    "date": "2020-03-17T00:00:00.000Z",
+                    "total": 1,
+                    "totalConfirmed": 3
+                }
+            ]
 
-"date": "2020-02-27T00:00:00.000Z",
-"total": 1,
-"totalConfirmed": 1
-},
-{
-"date": "2020-03-09T00:00:00.000Z",
-"total": 1,
-"totalConfirmed": 2
-},
-{
-"date": "2020-03-17T00:00:00.000Z",
-"total": 1,
-"totalConfirmed": 3
-}
-]
 }
 
 ## Get timeline for all states
