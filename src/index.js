@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 app.use('/api', routes);
 
 app.all('*', (req, res, next) => {
-    res.status(404).send(next);
+    res.status(404).send(next());
 });
 
 mongoose.connection.once('open', async () => {
