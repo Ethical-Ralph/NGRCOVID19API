@@ -4,7 +4,7 @@
     "description": "nigeria covid-19 api",
     "main": "index.js",
     "scripts": {
-        "test": "jest",
+        "test": "NODE_ENV=production mocha ./src/test",
         "server": "node ./src/index",
         "prod": "NODE_ENV=production npm run server",
         "dev": "NODE_ENV=development npm run server",
@@ -37,12 +37,12 @@
             "*.spec.js"
         ]
     },
-    "jest": {
-        "testEnvironment": "node"
-    },
     "devDependencies": {
+        "chai": "^4.2.0",
+        "chai-http": "^4.3.0",
         "husky": "^4.2.5",
         "jest": "^25.4.0",
+        "mocha": "^7.2.0",
         "nodemon": "^2.0.3",
         "prettier": "2.0.5",
         "pretty-quick": "^2.0.1"

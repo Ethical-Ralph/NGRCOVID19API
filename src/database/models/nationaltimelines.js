@@ -3,26 +3,13 @@ const Schema = mongoose.Schema;
 
 const timelineSchema = new Schema(
     {
-        dailyConfirmed: {
-            type: Number,
-        },
-        dailyDeceased: {
-            type: Number,
-        },
-
-        dailyRecovered: {
-            type: Number,
-        },
         date: {
             type: Date,
         },
+        total: {
+            type: Number,
+        },
         totalConfirmed: {
-            type: Number,
-        },
-        totalDeath: {
-            type: Number,
-        },
-        totalDischarged: {
             type: Number,
         },
     },

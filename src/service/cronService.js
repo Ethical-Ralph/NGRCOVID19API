@@ -12,8 +12,8 @@ const { subtractDayFromDate } = require('../utils/utils');
 const scheduleToGetTotalData = () => {
     let times = 0;
 
-    //Runs job every 1 hour
-    cron.schedule('59 * * * *', async () => {
+    //Runs job every 30 min
+    cron.schedule('30 * * * *', async () => {
         try {
             const newTotals = await nationalTotalsService.fetchNewLatest();
             const isValid = validateTotals(newTotals);
@@ -40,8 +40,8 @@ const scheduleToGetTotalData = () => {
 const scheduleToGetStateData = () => {
     let times = 0;
 
-    //Runs job every 1 hour
-    cron.schedule('59 * * * *', async () => {
+    //Runs job every 30 min
+    cron.schedule('30 * * * *', async () => {
         try {
             const newStateTotals = await statesTotalService.fetchNewStateData();
             const isValid = validateStateData(newStateTotals);
@@ -63,14 +63,17 @@ const scheduleToGetStateData = () => {
 };
 
 const scheduleToCreateTimeline = () => {
-    //Runs job every day at 00:10 GMT
-    cron.schedule('10 0 * * *', async () => {
+
+    //Runs job every day at 02:00 AM GMT
+    cron.schedule('0 2 * * *', async () => {
+        console.log('starting ');
         try {
             const newTotals = await nationalTotalsService.getTotals();
             const lastTimelineDate = subtractDayFromDate(2);
             const previousTimeline = await nationalTimelineService.getTimelineByDate(
                 lastTimelineDate,
             );
+
             await nationalTimelineService.createTimeline(
                 previousTimeline,
                 newTotals,
@@ -82,9 +85,11 @@ const scheduleToCreateTimeline = () => {
     });
 };
 
-//Runs job every day at 00:10 GMT
+
+//Runs job every day at 02:00 AM GMT
 const scheduleToCreateStateTimeline = () => {
-    cron.schedule('10 0 * * *', async () => {
+    cron.schedule('0 2 * * *', async () => {
+        console.log('starting ');
         try {
             const newData = await statesTotalService.getStateTotals();
             newData.forEach(async (val, i) => {
@@ -97,12 +102,15 @@ const scheduleToCreateStateTimeline = () => {
                 data.confirmed =
                     val.confirmedCases - lastTimeline.totalConfirmed;
                 data.totalConfirmed = val.confirmedCases;
-                if (data.confirmed === 0) return;
+                if (!data.confirmed) {
+                    console.log('No confimed cases for state ' + state);
+                    return;
+                }
                 await stateTimelineService.createTimeline(state, data);
-                console.log('done', i, state);
+                console.log('done', lastTimeline);
             });
         } catch (error) {
-            console.log(error);
+            console.log(error, statee);
         }
     });
 };
