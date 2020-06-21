@@ -17,7 +17,7 @@ const removeId = (data) => {
         return {
             date: val.date,
             confirmed: val.confirmed,
-            totalConfimed: val.totalConfirmed,
+            totalConfirmed: val.totalConfirmed,
         };
     });
 };
