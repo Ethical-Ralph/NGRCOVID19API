@@ -23,6 +23,8 @@ mongoose.connect(MONGODB_URL, {
     useUnifiedTopology: true,
 });
 
+console.log(new Date())
+
 app.get('/', (req, res) => {
     res.send('COVID19 API FOR NIGERIA');
 });
