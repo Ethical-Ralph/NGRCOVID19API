@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { NationalTimeline, StateTimeline } = require('../database');
-// const {seed} = require('../../newseed')
+// const seed = require('../../newseed')
 
 exports.database = (MONGODB_URL) => {
     mongoose.connect(

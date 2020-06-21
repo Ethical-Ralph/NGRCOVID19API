@@ -118,7 +118,7 @@ const startCronJobs = () => {
     // scheduleToGetTotalData();
     // scheduleToGetStateData();
     // scheduleToCreateTimeline();
-    scheduleToCreateStateTimeline();
+    // scheduleToCreateStateTimeline();
 };
 
 module.exports = {

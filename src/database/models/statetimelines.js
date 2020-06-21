@@ -8,6 +8,7 @@ const stateTimelineSchema = new Schema(
             {
                 date: Date,
                 confirmed: Number,
+                totalConfirmed: Number,
             },
         ],
     },

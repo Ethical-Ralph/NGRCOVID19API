@@ -1339,16 +1339,18 @@ const seed = [
 //     aaa[i].totalConfirmed = totals
 // });
 
-seed.forEach((ele, i) => {
-    ele.data.forEach((val, i) => {
-        let totals = 0;
-        for (var j = 0; j <= i; j++) {
-            totals += ele.data[j].confirmed;
-        }
-        ele.data[i].totalConfirmed = totals;
-    });
-});
+// seed.forEach((ele, i) => {
+//     ele.data.forEach((val, i) => {
+//         let totals = 0;
+//         for (var j = 0; j <= i; j++) {
+//             totals += ele.data[j].confirmed;
+//         }
+//         ele.data[i].totalConfirmed = totals;
+//     });
+// });
 
-console.log(seed);
+// console.log(seed);
 
-fs.writeFileSync('./newjson.json', JSON.stringify(seed));
+// fs.writeFileSync('./newjson.json', JSON.stringify(seed));
+
+module.exports = seed;
