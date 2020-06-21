@@ -42,9 +42,11 @@ const getTimelineForState = async (state) => {
 const lastTimelineForState = async (state) => {
     try {
         const dataArr = await StateTimeline.find({ state }).select('data');
+        if (state == 'akwaibom') console.log(state, dataArr);
         const data = dataArr[0].data;
         return data[data.length - 1];
     } catch (error) {
+        console.log(state);
         throw error;
     }
 };

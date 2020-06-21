@@ -64,7 +64,8 @@ const scheduleToGetStateData = () => {
 
 const scheduleToCreateTimeline = () => {
     //Runs job every day at 01:00 AM GMT
-    cron.schedule('0 0 * * *', async () => {
+    cron.schedule('* * * * *', async () => {
+        console.log('starting ');
         try {
             const newTotals = await nationalTotalsService.getTotals();
             const lastTimelineDate = subtractDayFromDate(2);
@@ -86,33 +87,37 @@ const scheduleToCreateTimeline = () => {
 
 //Runs job every day at 01:00 AM GMT +1
 const scheduleToCreateStateTimeline = () => {
-    cron.schedule('0 0 * * *', async () => {
+    cron.schedule('* * * * * *', async () => {
+        console.log('starting ');
+        let statee = '';
         try {
             const newData = await statesTotalService.getStateTotals();
             newData.forEach(async (val, i) => {
                 const state = val.state;
+                statee = state;
+                console.log(state);
                 const lastTimeline = await stateTimelineService.lastTimelineForState(
                     state,
                 );
-                let data = {};
-                data.date = subtractDayFromDate(1);
-                data.confirmed =
-                    val.confirmedCases - lastTimeline.totalConfirmed;
-                // data.totalConfirmed = val.confirmedCases;
-                if (data.confirmed === 0) return;
-                await stateTimelineService.createTimeline(state, data);
-                console.log('done', state, data.confirmed);
+                // let data = {};
+                // data.date = subtractDayFromDate(1);
+                // data.confirmed =
+                //     val.confirmedCases - lastTimeline.totalConfirmed;
+                // // data.totalConfirmed = val.confirmedCases;
+                // if (data.confirmed === 0) return;
+                // await stateTimelineService.createTimeline(state, data);
+                // console.log('done', lastTimeline,);
             });
         } catch (error) {
-            console.log(error);
+            console.log(error, statee);
         }
     });
 };
 
 const startCronJobs = () => {
-    scheduleToGetTotalData();
-    scheduleToGetStateData();
-    scheduleToCreateTimeline();
+    // scheduleToGetTotalData();
+    // scheduleToGetStateData();
+    // scheduleToCreateTimeline();
     scheduleToCreateStateTimeline();
 };
 
