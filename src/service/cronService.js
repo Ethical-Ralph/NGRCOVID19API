@@ -12,7 +12,7 @@ const { subtractDayFromDate } = require('../utils/utils');
 const scheduleToGetTotalData = () => {
     let times = 0;
 
-    //Runs job every 1 hour
+    //Runs job every 30 min
     cron.schedule('30 * * * *', async () => {
         try {
             const newTotals = await nationalTotalsService.fetchNewLatest();
@@ -40,7 +40,7 @@ const scheduleToGetTotalData = () => {
 const scheduleToGetStateData = () => {
     let times = 0;
 
-    //Runs job every 1 hour
+    //Runs job every 30 min
     cron.schedule('30 * * * *', async () => {
         try {
             const newStateTotals = await statesTotalService.fetchNewStateData();
@@ -63,8 +63,8 @@ const scheduleToGetStateData = () => {
 };
 
 const scheduleToCreateTimeline = () => {
-    //Runs job every day at 01:00 AM GMT
-    cron.schedule('* * * * *', async () => {
+    //Runs job every day at 02:00 AM GMT
+    cron.schedule('0 2 * * *', async () => {
         console.log('starting ');
         try {
             const newTotals = await nationalTotalsService.getTotals();
@@ -72,8 +72,7 @@ const scheduleToCreateTimeline = () => {
             const previousTimeline = await nationalTimelineService.getTimelineByDate(
                 lastTimelineDate,
             );
-            if (newTotals.confirmedCases - previousTimeline.totalConfirmed)
-                return;
+
             await nationalTimelineService.createTimeline(
                 previousTimeline,
                 newTotals,
@@ -85,28 +84,28 @@ const scheduleToCreateTimeline = () => {
     });
 };
 
-//Runs job every day at 01:00 AM GMT +1
+//Runs job every day at 02:00 AM GMT
 const scheduleToCreateStateTimeline = () => {
-    cron.schedule('* * * * * *', async () => {
+    cron.schedule('0 2 * * *', async () => {
         console.log('starting ');
-        let statee = '';
         try {
             const newData = await statesTotalService.getStateTotals();
             newData.forEach(async (val, i) => {
                 const state = val.state;
-                statee = state;
-                console.log(state);
                 const lastTimeline = await stateTimelineService.lastTimelineForState(
                     state,
                 );
-                // let data = {};
-                // data.date = subtractDayFromDate(1);
-                // data.confirmed =
-                //     val.confirmedCases - lastTimeline.totalConfirmed;
-                // // data.totalConfirmed = val.confirmedCases;
-                // if (data.confirmed === 0) return;
-                // await stateTimelineService.createTimeline(state, data);
-                // console.log('done', lastTimeline,);
+                let data = {};
+                data.date = subtractDayFromDate(1);
+                data.confirmed =
+                    val.confirmedCases - lastTimeline.totalConfirmed;
+                data.totalConfirmed = val.confirmedCases;
+                if (!data.confirmed) {
+                    console.log('No confimed cases for state ' + state);
+                    return;
+                }
+                await stateTimelineService.createTimeline(state, data);
+                console.log('done', lastTimeline);
             });
         } catch (error) {
             console.log(error, statee);
@@ -115,10 +114,10 @@ const scheduleToCreateStateTimeline = () => {
 };
 
 const startCronJobs = () => {
-    // scheduleToGetTotalData();
-    // scheduleToGetStateData();
-    // scheduleToCreateTimeline();
-    // scheduleToCreateStateTimeline();
+    scheduleToGetTotalData();
+    scheduleToGetStateData();
+    scheduleToCreateTimeline();
+    scheduleToCreateStateTimeline();
 };
 
 module.exports = {

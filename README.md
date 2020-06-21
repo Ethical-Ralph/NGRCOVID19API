@@ -172,10 +172,10 @@ The endpoints to the API is described below.
                         {
                             "date": Date,
                             "confirmed": Number,
+                            "totalConfirmed": Number
                         }
                     ]
                 }
-                ...
                 ...
                 ...
             ]
@@ -204,6 +204,7 @@ The endpoints to the API is described below.
                         {
                             "date": Date,
                             "confirmed": Number,
+                            "totalConfirmed": Number
                         }
                     ]
                 }
@@ -233,6 +234,7 @@ The endpoints to the API is described below.
                         {
                             "date": "2020-05-05T00:00:00.000Z",
                             "confirmed": 6,
+                            "totalConfirmed": Number
                         }
                     ]
                 },
@@ -242,6 +244,7 @@ The endpoints to the API is described below.
                         {
                             "date": "2020-05-05T00:00:00.000Z",
                             "confirmed": 3,
+                            "totalConfirmed": Number
                         }
                     ]
                 },
@@ -251,6 +254,7 @@ The endpoints to the API is described below.
                         {
                             "date": "2020-05-05T00:00:00.000Z",
                             "confirmed": 1,
+                            "totalConfirmed": Number
                         }
                     ]
                 },
