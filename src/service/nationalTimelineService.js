@@ -27,7 +27,7 @@ const getTimelineByDate = async (date) => {
         const timeline = await NationalTimeline.findOne({ date }).select(
             '-_id',
         );
-        return sortByDate(timeline);
+        return timeline;
     } catch (error) {
         throw error;
     }

@@ -64,7 +64,7 @@ const scheduleToGetStateData = () => {
 
 const scheduleToCreateTimeline = () => {
     //Runs job every day at 02:00 AM GMT
-    cron.schedule('0 2 * * *', async () => {
+    cron.schedule('* * * * *', async () => {
         console.log('starting ');
         try {
             const newTotals = await nationalTotalsService.getTotals();
@@ -114,10 +114,10 @@ const scheduleToCreateStateTimeline = () => {
 };
 
 const startCronJobs = () => {
-    scheduleToGetTotalData();
-    scheduleToGetStateData();
+    // scheduleToGetTotalData();
+    // scheduleToGetStateData();
     scheduleToCreateTimeline();
-    scheduleToCreateStateTimeline();
+    // scheduleToCreateStateTimeline();
 };
 
 module.exports = {
