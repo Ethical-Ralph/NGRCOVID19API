@@ -4,6 +4,7 @@ const cronService = require('./service/cronService');
 const { errorHandler } = require('./utils/errorhandler');
 const { database } = require('./utils/database');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -19,14 +20,12 @@ const MONGODB_URL = isProd
 //Connect To Mongo Database
 database(MONGODB_URL);
 
-app.get('/', (req, res) => {
-    res.send('COVID-19 API FOR NIGERIA');
-});
+app.use(express.static(path.join(__dirname, 'frontendbuild')));
 
 app.use('/api', routes);
 
 app.all('*', (req, res, next) => {
-    res.status(404).send(next());
+    res.sendFile(path.join(__dirname, 'frontendbuild', 'index.html'));
 });
 
 //Cron Services
