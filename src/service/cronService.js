@@ -105,10 +105,10 @@ const scheduleToCreateStateTimeline = () => {
                     return;
                 }
                 await stateTimelineService.createTimeline(state, data);
-                console.log('done', lastTimeline);
+                console.log('done', state);
             });
         } catch (error) {
-            console.log(error, statee);
+            console.log(error);
         }
     });
 };
