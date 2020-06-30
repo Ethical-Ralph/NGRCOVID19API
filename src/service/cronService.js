@@ -116,8 +116,8 @@ const scheduleToCreateStateTimeline = () => {
 
 //Runs job every day at 05:00 AM GMT
 const sendNotification = () => {
-    cron.schedule('0 5 * * *', () => {
-        notificationService.sendNotification();
+    cron.schedule('0 5 * * *', async () => {
+        await notificationService.sendNotification();
     });
 };
 
