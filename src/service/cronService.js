@@ -3,6 +3,7 @@ const nationalTotalsService = require('./nationalTotalsService');
 const statesTotalService = require('./statesTotalService');
 const nationalTimelineService = require('./nationalTimelineService');
 const stateTimelineService = require('../service/stateTimelineService');
+const notificationService = require('./notificationService');
 const { validateStateData, validateTotals } = require('../utils/validator');
 const { subtractDayFromDate } = require('../utils/utils');
 
@@ -113,11 +114,18 @@ const scheduleToCreateStateTimeline = () => {
     });
 };
 
+const sendNotification = () => {
+    cron.schedule('* * * * *', async () => {
+        notificationService.sendNotification();
+    });
+};
+
 const startCronJobs = () => {
     scheduleToGetTotalData();
     scheduleToGetStateData();
     scheduleToCreateTimeline();
     scheduleToCreateStateTimeline();
+    sendNotification();
 };
 
 module.exports = {

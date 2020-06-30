@@ -2,6 +2,7 @@ const nationalTotalsService = require('./service/nationalTotalsService');
 const statesTotalService = require('./service/statesTotalService');
 const nationalTimelineService = require('./service/nationalTimelineService');
 const stateTimelineService = require('./service/stateTimelineService');
+const notificationService = require('./service/notificationService');
 
 const getNationalTotals = async (req, res, next) => {
     try {
@@ -70,6 +71,52 @@ const timelineForState = async (req, res, next) => {
     }
 };
 
+const getAllSubscriptions = async (req, res, next) => {
+    try {
+        const data = await notificationService.getAllNutSub();
+        return res.json({
+            data,
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+const saveSubscription = async (req, res, next) => {
+    const sub = req.body;
+    try {
+        const data = await notificationService.saveSubDetails(sub);
+        const payload = {
+            url: 'https://covid19.ethicalhub.tech',
+            title: 'Covid19 Nigeria',
+            text:
+                'You have successfully subscribe for COVID19 Nigeria notification updates',
+        };
+        res.json({
+            data,
+        });
+        return notificationService.sendWebPush(sub, payload);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const updateSubscription = async (req, res, next) => {
+    const subId = req.params.id;
+    const subData = req.body;
+    try {
+        const data = await notificationService.updateSubscription(
+            subId,
+            subData,
+        );
+        return res.json({
+            data,
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
     getNationalTotals,
     getAllStatesTotal,
@@ -77,4 +124,7 @@ module.exports = {
     nationalTimeline,
     stateTimelines,
     timelineForState,
+    getAllSubscriptions,
+    saveSubscription,
+    updateSubscription,
 };

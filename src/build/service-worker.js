@@ -1,41 +1,66 @@
-/**
- * Welcome to your Workbox-powered service worker!
- *
- * You'll need to register this file in your web app and you should
- * disable HTTP caching for this file too.
- * See https://goo.gl/nhQhGp
- *
- * The rest of the code is auto-generated. Please don't update this file
- * directly; instead, make changes to your Workbox build configuration
- * and re-run your build process.
- * See https://goo.gl/2aRDsh
- */
+const cacheName = 'v1';
 
-importScripts(
-    'https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js',
-);
+function receivePushNotification(event) {
+    const { image, tag, url, title, text } = event.data.json();
 
-importScripts('/precache-manifest.dadb803fc7ffff6f150ad80d475107dc.js');
+    const options = {
+        data: url,
+        body: text,
+        icon: image,
+        vibrate: [200, 100, 200],
+        tag: tag,
+        image: image,
+        badge:
+            'https://res.cloudinary.com/eralphcloud/image/upload/v1593534116/logo_rethvw.png',
+        actions: [
+            {
+                action: 'Detail',
+                title: 'View',
+                icon:
+                    'https://res.cloudinary.com/eralphcloud/image/upload/v1593534116/logo_rethvw.png',
+            },
+        ],
+    };
+    event.waitUntil(self.registration.showNotification(title, options));
+}
 
-self.addEventListener('message', (event) => {
-    if (event.data && event.data.type === 'SKIP_WAITING') {
-        self.skipWaiting();
-    }
+function openPushNotification(event) {
+    event.notification.close();
+    event.waitUntil(clients.openWindow(event.notification.data));
+}
+
+self.addEventListener('push', receivePushNotification);
+self.addEventListener('notificationclick', openPushNotification);
+
+self.addEventListener('install', (e) => {});
+
+self.addEventListener('activate', (e) => {
+    caches.keys().then((cacheNames) => {
+        return Promise.all(
+            cacheNames.map((cache) => {
+                if (cache !== cacheName) {
+                    return caches.delete(cache);
+                }
+            }),
+        );
+    });
 });
 
-workbox.core.clientsClaim();
+self.addEventListener('fetch', (e) => {
+    e.respondWith(
+        fetch(e.request)
+            .then((res) => {
+                const resClone = res.clone();
 
-/**
- * The workboxSW.precacheAndRoute() method efficiently caches and responds to
- * requests for URLs in the manifest.
- * See https://goo.gl/S9QRab
- */
-self.__precacheManifest = [].concat(self.__precacheManifest || []);
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
-
-workbox.routing.registerNavigationRoute(
-    workbox.precaching.getCacheKeyForURL('/index.html'),
-    {
-        blacklist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
-    },
-);
+                // Open cache
+                caches.open(cacheName).then((cache) => {
+                    // Add response to cache
+                    cache
+                        .put(e.request, resClone)
+                        .catch((res) => console.log(''));
+                });
+                return res;
+            })
+            .catch(() => caches.match(e.request).then((res) => res)),
+    );
+});

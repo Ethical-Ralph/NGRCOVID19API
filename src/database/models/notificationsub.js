@@ -3,21 +3,10 @@ const Schema = mongoose.Schema;
 
 const SubscriptionSchema = new Schema(
     {
-        samplesTested: {
-            type: Number,
-        },
-        confirmedCases: {
-            type: Number,
-        },
-        activeCases: {
-            type: Number,
-        },
-        discharged: {
-            type: Number,
-        },
-        death: {
-            type: Number,
-        },
+        userId: String,
+        endpoint: String,
+        auth: String,
+        p256dh: String,
     },
     { versionKey: false },
 );

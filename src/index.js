@@ -20,6 +20,13 @@ const MONGODB_URL = isProd
 //Connect To Mongo Database
 database(MONGODB_URL);
 
+app.use(express.json());
+app.use(
+    express.urlencoded({
+        extended: true,
+    }),
+);
+
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use('/api', routes);

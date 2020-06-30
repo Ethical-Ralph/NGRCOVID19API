@@ -19,26 +19,26 @@
                 r = a.n(n),
                 l = a(61),
                 o = a.n(l),
-                c = a(550),
-                i = a(561),
-                s = a(562),
-                u = a(563),
-                A = a(19),
-                E = a(26),
-                p = a(253),
-                m = a(114),
-                g = a(16),
-                d = a.n(g),
-                I = a(33),
-                h = a(27),
-                f = a(87),
-                y = a.n(f),
-                R = 'https://covid19ngr.herokuapp.com',
-                b = (function () {
-                    var e = Object(I.a)(
-                        d.a.mark(function e() {
+                c = a(9),
+                i = a.n(c),
+                s = a(17),
+                u = a(550),
+                A = a(561),
+                E = a(562),
+                p = a(563),
+                m = a(20),
+                g = a(27),
+                d = a(253),
+                I = a(114),
+                f = a(28),
+                h = a(87),
+                y = a.n(h),
+                b = 'https://covid19ngr.herokuapp.com',
+                R = (function () {
+                    var e = Object(s.a)(
+                        i.a.mark(function e() {
                             var t;
-                            return d.a.wrap(
+                            return i.a.wrap(
                                 function (e) {
                                     for (;;)
                                         switch ((e.prev = e.next)) {
@@ -48,7 +48,7 @@
                                                     (e.next = 3),
                                                     y.a.get(
                                                         ''.concat(
-                                                            R,
+                                                            b,
                                                             '/api/totals',
                                                         ),
                                                     )
@@ -83,10 +83,10 @@
                     };
                 })(),
                 C = (function () {
-                    var e = Object(I.a)(
-                        d.a.mark(function e() {
+                    var e = Object(s.a)(
+                        i.a.mark(function e() {
                             var t;
-                            return d.a.wrap(
+                            return i.a.wrap(
                                 function (e) {
                                     for (;;)
                                         switch ((e.prev = e.next)) {
@@ -96,7 +96,7 @@
                                                     (e.next = 3),
                                                     y.a.get(
                                                         ''.concat(
-                                                            R,
+                                                            b,
                                                             '/api/states',
                                                         ),
                                                     )
@@ -131,10 +131,10 @@
                     };
                 })(),
                 T = (function () {
-                    var e = Object(I.a)(
-                        d.a.mark(function e() {
+                    var e = Object(s.a)(
+                        i.a.mark(function e() {
                             var t;
-                            return d.a.wrap(
+                            return i.a.wrap(
                                 function (e) {
                                     for (;;)
                                         switch ((e.prev = e.next)) {
@@ -144,7 +144,7 @@
                                                     (e.next = 3),
                                                     y.a.get(
                                                         ''.concat(
-                                                            R,
+                                                            b,
                                                             '/api/timelines',
                                                         ),
                                                     )
@@ -179,10 +179,10 @@
                     };
                 })(),
                 O = (function () {
-                    var e = Object(I.a)(
-                        d.a.mark(function e() {
+                    var e = Object(s.a)(
+                        i.a.mark(function e() {
                             var t;
-                            return d.a.wrap(
+                            return i.a.wrap(
                                 function (e) {
                                     for (;;)
                                         switch ((e.prev = e.next)) {
@@ -192,7 +192,7 @@
                                                     (e.next = 3),
                                                     y.a.get(
                                                         ''.concat(
-                                                            R,
+                                                            b,
                                                             '/api/timelines/states',
                                                         ),
                                                     )
@@ -237,33 +237,33 @@
                     var t = new Date(e).toDateString().split(' ');
                     return t[1] + ' ' + t[2];
                 },
-                w = function (e) {
+                k = function (e) {
                     return { type: 'FETCH_NATIONALTOTAL', data: e };
                 },
-                k = function (e) {
+                w = function (e) {
                     return {
                         type: 'FETCH_STATETOTAL',
                         data: (e = e.map(function (e) {
-                            return Object(h.a)({}, e, { state: v(e.state) });
+                            return Object(f.a)({}, e, { state: v(e.state) });
                         })),
                     };
                 },
-                N = function (e) {
+                x = function (e) {
                     return { type: 'FETCH_STATETIMELINE', data: e };
                 },
                 D = function (e) {
                     return {
                         type: 'FETCH_NATIONALTIMELINE',
                         data: (e = e.map(function (e) {
-                            return Object(h.a)({}, e, { date: P(e.date) });
+                            return Object(f.a)({}, e, { date: P(e.date) });
                         })),
                     };
                 },
-                x = a(565),
+                N = a(565),
                 M = a(76),
-                B = a(551),
-                j = a(326),
-                K = Object(c.a)({
+                j = a(551),
+                B = a(326),
+                S = Object(u.a)({
                     button: {
                         padding: '9px',
                         margin: '2px',
@@ -281,17 +281,17 @@
                         padding: '10px',
                     },
                 }),
-                L = Object(A.b)(
+                K = Object(m.b)(
                     function (e) {
                         return { states: e.states, isLoading: e.isLoading };
                     },
                     {
                         getStateTotals: function () {
                             return (function () {
-                                var e = Object(I.a)(
-                                    d.a.mark(function e(t) {
+                                var e = Object(s.a)(
+                                    i.a.mark(function e(t) {
                                         var a;
-                                        return d.a.wrap(
+                                        return i.a.wrap(
                                             function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
@@ -303,7 +303,7 @@
                                                             );
                                                         case 3:
                                                             (a = e.sent),
-                                                                t(k(a.data)),
+                                                                t(w(a.data)),
                                                                 (e.next = 10);
                                                             break;
                                                         case 7:
@@ -339,14 +339,14 @@
                             o = e.states,
                             c = e.isLoading,
                             i = Object(n.useState)('confirmedCases'),
-                            s = Object(E.a)(i, 2),
+                            s = Object(g.a)(i, 2),
                             u = s[0],
                             A = s[1],
-                            p = K(),
-                            g = function (e) {
+                            E = S(),
+                            p = function (e) {
                                 A(e);
                             },
-                            d = Object(x.a)(function (e) {
+                            m = Object(N.a)(function (e) {
                                 return (function (e) {
                                     switch (u) {
                                         case 'confirmedCases':
@@ -368,7 +368,7 @@
                             },
                             [t],
                         );
-                        var I = function (e) {
+                        var d = function (e) {
                             return o.find(function (t) {
                                 return (
                                     v(t.state.toLowerCase()) ===
@@ -386,7 +386,7 @@
                                 },
                             },
                             r.a.createElement(
-                                B.a,
+                                j.a,
                                 { style: { color: 'green' }, variant: 'h5' },
                                 'Map',
                             ),
@@ -399,7 +399,7 @@
                                 r.a.Fragment,
                                 null,
                                 r.a.createElement(
-                                    m.ComposableMap,
+                                    I.ComposableMap,
                                     {
                                         projection: 'geoAzimuthalEqualArea',
                                         projectionConfig: {
@@ -408,16 +408,16 @@
                                         },
                                     },
                                     r.a.createElement(
-                                        m.Geographies,
-                                        { 'data-tip': 'map', geography: j },
+                                        I.Geographies,
+                                        { 'data-tip': 'map', geography: B },
                                         function (e) {
                                             return e.geographies.map(function (
                                                 e,
                                             ) {
-                                                var t = I(e.properties.ID),
-                                                    a = t ? d(t[u]) : '#F5F4F9';
+                                                var t = d(e.properties.ID),
+                                                    a = t ? m(t[u]) : '#F5F4F9';
                                                 return r.a.createElement(
-                                                    m.Geography,
+                                                    I.Geography,
                                                     {
                                                         key: e.rsmKey,
                                                         geography: e,
@@ -427,7 +427,7 @@
                                                             return (function (
                                                                 e,
                                                             ) {
-                                                                var t = I(
+                                                                var t = d(
                                                                     e.properties
                                                                         .ID,
                                                                 );
@@ -446,14 +446,14 @@
                                 ),
                                 r.a.createElement(
                                     'div',
-                                    { className: p.buttongroup },
+                                    { className: E.buttongroup },
                                     r.a.createElement(
                                         'button',
                                         {
-                                            className: p.button,
+                                            className: E.button,
                                             style: { backgroundColor: 'blue' },
                                             onClick: function () {
-                                                return g('confirmedCases');
+                                                return p('confirmedCases');
                                             },
                                         },
                                         'Confirmed',
@@ -461,12 +461,12 @@
                                     r.a.createElement(
                                         'button',
                                         {
-                                            className: p.button,
+                                            className: E.button,
                                             style: {
                                                 backgroundColor: 'orange',
                                             },
                                             onClick: function () {
-                                                return g('activeCases');
+                                                return p('activeCases');
                                             },
                                         },
                                         'Active',
@@ -474,10 +474,10 @@
                                     r.a.createElement(
                                         'button',
                                         {
-                                            className: p.button,
+                                            className: E.button,
                                             style: { backgroundColor: 'green' },
                                             onClick: function () {
-                                                return g('discharged');
+                                                return p('discharged');
                                             },
                                         },
                                         'Discharged',
@@ -486,10 +486,10 @@
                                     r.a.createElement(
                                         'button',
                                         {
-                                            className: p.button,
+                                            className: E.button,
                                             style: { backgroundColor: 'red' },
                                             onClick: function () {
-                                                return g('death');
+                                                return p('death');
                                             },
                                         },
                                         'Death',
@@ -499,17 +499,17 @@
                         );
                     }),
                 ),
-                S = function () {
+                L = function () {
                     var e = Object(n.useState)({}),
-                        t = Object(E.a)(e, 2),
+                        t = Object(g.a)(e, 2),
                         a = t[0],
                         l = t[1];
                     return r.a.createElement(
                         r.a.Fragment,
                         null,
-                        r.a.createElement(L, { setData: l }),
+                        r.a.createElement(K, { setData: l }),
                         r.a.createElement(
-                            p.a,
+                            d.a,
                             null,
                             a
                                 ? r.a.createElement(
@@ -554,7 +554,7 @@
                 J = a(552),
                 F = a(241),
                 Q = a.n(F),
-                W = function (e) {
+                U = function (e) {
                     var t = e.title,
                         n = e.number,
                         l = e.classes;
@@ -577,12 +577,12 @@
                                     style: { textAlign: 'center' },
                                 },
                                 r.a.createElement(
-                                    B.a,
+                                    j.a,
                                     null,
                                     r.a.createElement('b', null, t),
                                 ),
                                 r.a.createElement(
-                                    B.a,
+                                    j.a,
                                     null,
                                     n
                                         ? r.a.createElement(
@@ -604,7 +604,7 @@
                         ),
                     );
                 },
-                U = Object(c.a)({
+                W = Object(u.a)({
                     root: { display: 'flex', justifyContent: 'center' },
                     Paper: { padding: '30px', margin: '10px' },
                     confirmed: { color: '#202090' },
@@ -612,17 +612,17 @@
                     active: { color: 'orange' },
                     death: { color: 'red' },
                 }),
-                q = Object(A.b)(
+                q = Object(m.b)(
                     function (e) {
                         return { totals: e.totals };
                     },
                     {
                         getNationalTotals: function () {
                             return (function () {
-                                var e = Object(I.a)(
-                                    d.a.mark(function e(t) {
+                                var e = Object(s.a)(
+                                    i.a.mark(function e(t) {
                                         var a;
-                                        return d.a.wrap(
+                                        return i.a.wrap(
                                             function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
@@ -630,11 +630,11 @@
                                                             return (
                                                                 (e.prev = 0),
                                                                 (e.next = 3),
-                                                                b()
+                                                                R()
                                                             );
                                                         case 3:
                                                             (a = e.sent),
-                                                                t(w(a.data)),
+                                                                t(k(a.data)),
                                                                 (e.next = 10);
                                                             break;
                                                         case 7:
@@ -666,7 +666,7 @@
                 )(function (e) {
                     var t = e.totals,
                         a = e.getNationalTotals,
-                        l = U();
+                        l = W();
                     return (
                         Object(n.useEffect)(
                             function () {
@@ -687,7 +687,7 @@
                             r.a.createElement(
                                 J.a,
                                 { item: !0, xs: 6, md: 3 },
-                                r.a.createElement(W, {
+                                r.a.createElement(U, {
                                     title: 'Confirmed',
                                     classes: l.confirmed,
                                     number: t.confirmedCases,
@@ -696,7 +696,7 @@
                             r.a.createElement(
                                 J.a,
                                 { item: !0, xs: 6, md: 3 },
-                                r.a.createElement(W, {
+                                r.a.createElement(U, {
                                     title: 'Active',
                                     classes: l.active,
                                     number: t.activeCases,
@@ -705,7 +705,7 @@
                             r.a.createElement(
                                 J.a,
                                 { item: !0, xs: 6, md: 3 },
-                                r.a.createElement(W, {
+                                r.a.createElement(U, {
                                     title: 'Discharged',
                                     classes: l.discharged,
                                     number: t.discharged,
@@ -714,7 +714,7 @@
                             r.a.createElement(
                                 J.a,
                                 { item: !0, xs: 6, md: 3 },
-                                r.a.createElement(W, {
+                                r.a.createElement(U, {
                                     title: 'Death',
                                     classes: l.death,
                                     number: t.death,
@@ -723,9 +723,9 @@
                         )
                     );
                 }),
-                H = a(14),
-                G = a(556),
-                V = a(558),
+                H = a(15),
+                V = a(556),
+                G = a(558),
                 Y = a(553),
                 Z = a(555),
                 z = a(557),
@@ -765,11 +765,11 @@
                         r.a.createElement($, { align: 'right' }, ' ', t),
                     );
                 },
-                ae = Object(c.a)({
+                ae = Object(u.a)({
                     table: { Width: 100 },
                     container: { maxHeight: 440 },
                 }),
-                ne = Object(A.b)(function (e) {
+                ne = Object(m.b)(function (e) {
                     return { states: e.states, isLoading: e.isLoading };
                 })(function (e) {
                     var t = e.states,
@@ -779,7 +779,7 @@
                         Z.a,
                         { className: l.container, component: _.a },
                         r.a.createElement(
-                            G.a,
+                            V.a,
                             {
                                 stickyHeader: !0,
                                 className: l.table,
@@ -843,7 +843,7 @@
                                 ),
                             ),
                             r.a.createElement(
-                                V.a,
+                                G.a,
                                 null,
                                 n
                                     ? r.a.createElement(te, {
@@ -890,8 +890,8 @@
                         ),
                     );
                 }),
-                re = a(9),
-                le = Object(A.b)(
+                re = a(10),
+                le = Object(m.b)(
                     function (e) {
                         return {
                             nationalTimelines: e.nationalTimelines,
@@ -901,10 +901,10 @@
                     {
                         getNationalTimelines: function () {
                             return (function () {
-                                var e = Object(I.a)(
-                                    d.a.mark(function e(t) {
+                                var e = Object(s.a)(
+                                    i.a.mark(function e(t) {
                                         var a;
-                                        return d.a.wrap(
+                                        return i.a.wrap(
                                             function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
@@ -1048,7 +1048,7 @@
                               )
                     );
                 }),
-                oe = Object(A.b)(
+                oe = Object(m.b)(
                     function (e) {
                         return {
                             stateTimelines: e.stateTimelines,
@@ -1061,10 +1061,10 @@
                     {
                         getStateTimelines: function () {
                             return (function () {
-                                var e = Object(I.a)(
-                                    d.a.mark(function e(t) {
+                                var e = Object(s.a)(
+                                    i.a.mark(function e(t) {
                                         var a;
-                                        return d.a.wrap(
+                                        return i.a.wrap(
                                             function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
@@ -1076,7 +1076,7 @@
                                                             );
                                                         case 3:
                                                             (a = e.sent),
-                                                                t(N(a.data)),
+                                                                t(x(a.data)),
                                                                 (e.next = 10);
                                                             break;
                                                         case 7:
@@ -1111,17 +1111,17 @@
                         o = e.statelist,
                         c = e.isLoading,
                         i = Object(n.useState)('lagos'),
-                        s = Object(E.a)(i, 2),
+                        s = Object(g.a)(i, 2),
                         u = s[0],
                         A = s[1],
-                        p = function () {
+                        E = function () {
                             return t
                                 .find(function (e) {
                                     return e.state === u;
                                 })
                                 .data.map(function (e) {
                                     var t = P(e.date);
-                                    return Object(h.a)({}, e, { date: t });
+                                    return Object(f.a)({}, e, { date: t });
                                 });
                         };
                     Object(n.useEffect)(
@@ -1170,7 +1170,7 @@
                                       null,
                                       r.a.createElement(
                                           re.b,
-                                          { data: p() },
+                                          { data: E() },
                                           r.a.createElement(re.c, {
                                               strokeDasharray: '3 3',
                                           }),
@@ -1210,7 +1210,7 @@
                                       null,
                                       r.a.createElement(
                                           re.b,
-                                          { data: p() },
+                                          { data: E() },
                                           r.a.createElement(re.c, {
                                               strokeDasharray: '3 3',
                                           }),
@@ -1279,7 +1279,7 @@
                                 r.a.createElement(
                                     J.a,
                                     { item: !0, xs: 12 },
-                                    r.a.createElement(S, null),
+                                    r.a.createElement(L, null),
                                 ),
                             ),
                             r.a.createElement(
@@ -1319,7 +1319,7 @@
                                             },
                                         },
                                         r.a.createElement(
-                                            B.a,
+                                            j.a,
                                             { style: { color: 'green' } },
                                             'National Timeline Charts',
                                         ),
@@ -1349,7 +1349,7 @@
                                             },
                                         },
                                         r.a.createElement(
-                                            B.a,
+                                            j.a,
                                             { style: { color: 'green' } },
                                             'State Timeline Charts',
                                         ),
@@ -1378,7 +1378,7 @@
                                             },
                                         },
                                         r.a.createElement(
-                                            B.a,
+                                            j.a,
                                             { style: { color: 'green' } },
                                             'Made with ',
                                             r.a.createElement(
@@ -1410,8 +1410,8 @@
                         ),
                     );
                 },
-                se = a(12),
-                ue = Object(c.a)({
+                se = a(13),
+                ue = Object(u.a)({
                     error: {
                         padding: '10px',
                         width: '100%',
@@ -1429,7 +1429,7 @@
                     var t = e.error,
                         a = e.errorOccurred,
                         l = Object(n.useState)(!1),
-                        o = Object(E.a)(l, 2),
+                        o = Object(g.a)(l, 2),
                         c = o[0],
                         i = o[1];
                     Object(n.useEffect)(
@@ -1459,7 +1459,7 @@
                 pe = a(564),
                 me = a(559),
                 ge = a(560),
-                de = Object(c.a)({
+                de = Object(u.a)({
                     navbar:
                         ((ce = { background: '#52c234' }),
                         Object(Ee.a)(
@@ -1496,7 +1496,7 @@
                                     alt: 'logo',
                                 }),
                                 r.a.createElement(
-                                    B.a,
+                                    j.a,
                                     {
                                         variant: 'h4',
                                         className: e['navbar-text'],
@@ -1507,115 +1507,363 @@
                         ),
                     );
                 },
-                he = Object(c.a)({ root: { display: 'flex' } }),
-                fe = Object(A.b)(function (e) {
+                fe = (function (e) {
+                    for (
+                        var t = '='.repeat((4 - (e.length % 4)) % 4),
+                            a = (e + t).replace(/-/g, '+').replace(/_/g, '/'),
+                            n = window.atob(a),
+                            r = new Uint8Array(n.length),
+                            l = 0;
+                        l < n.length;
+                        ++l
+                    )
+                        r[l] = n.charCodeAt(l);
+                    return r;
+                })(
+                    'BM0kvq9Et9gZtd3-zjV4z33dMMSSDKxbxOVE0Anyh75qBEPcu4AUtsIAafOERDSiItof3lDo-TRVFcpznxo8gd4',
+                );
+            function he() {
+                return 'serviceWorker' in navigator;
+            }
+            function ye() {
+                return 'PushManager' in window;
+            }
+            function be(e) {
+                localStorage.setItem('pushid', e);
+            }
+            function Re() {
+                return Ce.apply(this, arguments);
+            }
+            function Ce() {
+                return (Ce = Object(s.a)(
+                    i.a.mark(function e() {
+                        var t;
+                        return i.a.wrap(function (e) {
+                            for (;;)
+                                switch ((e.prev = e.next)) {
+                                    case 0:
+                                        if (!he() || !ye()) {
+                                            e.next = 7;
+                                            break;
+                                        }
+                                        return (
+                                            (e.next = 3),
+                                            navigator.serviceWorker.ready
+                                        );
+                                    case 3:
+                                        return (
+                                            (t = e.sent),
+                                            (e.next = 6),
+                                            t.pushManager.subscribe({
+                                                userVisibleOnly: !0,
+                                                applicationServerKey: fe,
+                                            })
+                                        );
+                                    case 6:
+                                        return e.abrupt('return', e.sent);
+                                    case 7:
+                                    case 'end':
+                                        return e.stop();
+                                }
+                        }, e);
+                    }),
+                )).apply(this, arguments);
+            }
+            function Te(e) {
+                return Oe.apply(this, arguments);
+            }
+            function Oe() {
+                return (Oe = Object(s.a)(
+                    i.a.mark(function e(t) {
+                        var a;
+                        return i.a.wrap(function (e) {
+                            for (;;)
+                                switch ((e.prev = e.next)) {
+                                    case 0:
+                                        return (
+                                            (e.next = 2),
+                                            fetch(
+                                                ''.concat(
+                                                    '/api',
+                                                    '/subscription',
+                                                ),
+                                                {
+                                                    credentials: 'omit',
+                                                    headers: {
+                                                        'content-type':
+                                                            'application/json;charset=UTF-8',
+                                                        'sec-fetch-mode':
+                                                            'cors',
+                                                    },
+                                                    body: JSON.stringify(t),
+                                                    method: 'POST',
+                                                    mode: 'cors',
+                                                },
+                                            )
+                                        );
+                                    case 2:
+                                        return (
+                                            (a = e.sent), (e.next = 5), a.json()
+                                        );
+                                    case 5:
+                                        be(e.sent.data._id);
+                                    case 7:
+                                    case 'end':
+                                        return e.stop();
+                                }
+                        }, e);
+                    }),
+                )).apply(this, arguments);
+            }
+            function ve(e, t) {
+                return Pe.apply(this, arguments);
+            }
+            function Pe() {
+                return (Pe = Object(s.a)(
+                    i.a.mark(function e(t, a) {
+                        var n;
+                        return i.a.wrap(function (e) {
+                            for (;;)
+                                switch ((e.prev = e.next)) {
+                                    case 0:
+                                        return (
+                                            (e.next = 2),
+                                            fetch(
+                                                ''
+                                                    .concat(
+                                                        '/api',
+                                                        '/subscription/',
+                                                    )
+                                                    .concat(t),
+                                                {
+                                                    credentials: 'omit',
+                                                    headers: {
+                                                        'content-type':
+                                                            'application/json;charset=UTF-8',
+                                                        'sec-fetch-mode':
+                                                            'cors',
+                                                    },
+                                                    body: JSON.stringify(a),
+                                                    method: 'PATCH',
+                                                    mode: 'cors',
+                                                },
+                                            )
+                                        );
+                                    case 2:
+                                        return (
+                                            (n = e.sent), (e.next = 5), n.json()
+                                        );
+                                    case 5:
+                                        be(e.sent.data._id);
+                                    case 7:
+                                    case 'end':
+                                        return e.stop();
+                                }
+                        }, e);
+                    }),
+                )).apply(this, arguments);
+            }
+            function ke() {
+                if (he() && ye())
+                    return navigator.serviceWorker.ready
+                        .then(function (e) {
+                            return e.pushManager.getSubscription();
+                        })
+                        .then(function (e) {
+                            return e;
+                        });
+            }
+            var we = Object(u.a)({ root: { display: 'flex' } }),
+                xe = Object(m.b)(function (e) {
                     return { errorOccurred: e.errorOccurred };
                 })(function (e) {
                     var t = e.errorOccurred,
-                        a = he(),
-                        n = Object(i.a)('(min-width:1024px)'),
-                        l = !navigator.onLine;
-                    return r.a.createElement(
-                        r.a.Fragment,
-                        null,
-                        r.a.createElement(s.a, null),
-                        r.a.createElement(Ie, null),
-                        r.a.createElement(Ae, {
-                            errorOccurred: t,
-                            error: 'An internal server error occurred',
-                        }),
-                        r.a.createElement(Ae, {
-                            errorOccurred: l,
-                            error: 'App offline falling back to cache',
-                        }),
+                        a = we(),
+                        l = Object(A.a)('(min-width:1024px)'),
+                        o = !navigator.onLine,
+                        c = (function () {
+                            var e = Object(s.a)(
+                                i.a.mark(function e() {
+                                    return i.a.wrap(function (e) {
+                                        for (;;)
+                                            switch ((e.prev = e.next)) {
+                                                case 0:
+                                                    ke().then(
+                                                        (function () {
+                                                            var e = Object(s.a)(
+                                                                i.a.mark(
+                                                                    function e(
+                                                                        t,
+                                                                    ) {
+                                                                        var a,
+                                                                            n,
+                                                                            r;
+                                                                        return i.a.wrap(
+                                                                            function (
+                                                                                e,
+                                                                            ) {
+                                                                                for (;;)
+                                                                                    switch (
+                                                                                        (e.prev =
+                                                                                            e.next)
+                                                                                    ) {
+                                                                                        case 0:
+                                                                                            if (
+                                                                                                null !==
+                                                                                                t
+                                                                                            ) {
+                                                                                                e.next = 5;
+                                                                                                break;
+                                                                                            }
+                                                                                            return (
+                                                                                                (e.next = 3),
+                                                                                                Re()
+                                                                                            );
+                                                                                        case 3:
+                                                                                            return (
+                                                                                                (a =
+                                                                                                    e.sent),
+                                                                                                e.abrupt(
+                                                                                                    'return',
+                                                                                                    Te(
+                                                                                                        a,
+                                                                                                    ),
+                                                                                                )
+                                                                                            );
+                                                                                        case 5:
+                                                                                            if (
+                                                                                                (n = localStorage.getItem(
+                                                                                                    'pushid',
+                                                                                                )) ||
+                                                                                                'undefined' !==
+                                                                                                    typeof n
+                                                                                            ) {
+                                                                                                e.next = 11;
+                                                                                                break;
+                                                                                            }
+                                                                                            return (
+                                                                                                (e.next = 9),
+                                                                                                Re()
+                                                                                            );
+                                                                                        case 9:
+                                                                                            return (
+                                                                                                (r =
+                                                                                                    e.sent),
+                                                                                                e.abrupt(
+                                                                                                    'return',
+                                                                                                    Te(
+                                                                                                        r,
+                                                                                                    ),
+                                                                                                )
+                                                                                            );
+                                                                                        case 11:
+                                                                                            return e.abrupt(
+                                                                                                'return',
+                                                                                                ve(
+                                                                                                    n,
+                                                                                                    t,
+                                                                                                ),
+                                                                                            );
+                                                                                        case 12:
+                                                                                        case 'end':
+                                                                                            return e.stop();
+                                                                                    }
+                                                                            },
+                                                                            e,
+                                                                        );
+                                                                    },
+                                                                ),
+                                                            );
+                                                            return function (
+                                                                t,
+                                                            ) {
+                                                                return e.apply(
+                                                                    this,
+                                                                    arguments,
+                                                                );
+                                                            };
+                                                        })(),
+                                                    );
+                                                case 1:
+                                                case 'end':
+                                                    return e.stop();
+                                            }
+                                    }, e);
+                                }),
+                            );
+                            return function () {
+                                return e.apply(this, arguments);
+                            };
+                        })();
+                    return (
+                        Object(n.useEffect)(function () {
+                            he() && ye() && c();
+                        }, []),
                         r.a.createElement(
-                            u.a,
-                            { maxWidth: n && 'md', className: a.root },
-                            r.a.createElement(ie, null),
-                        ),
+                            r.a.Fragment,
+                            null,
+                            r.a.createElement(E.a, null),
+                            r.a.createElement(Ie, null),
+                            r.a.createElement(Ae, {
+                                errorOccurred: t,
+                                error: 'An internal server error occurred',
+                            }),
+                            r.a.createElement(Ae, {
+                                errorOccurred: o,
+                                error: 'App offline falling back to cache',
+                            }),
+                            r.a.createElement(
+                                p.a,
+                                { maxWidth: l && 'md', className: a.root },
+                                r.a.createElement(ie, null),
+                            ),
+                        )
                     );
                 }),
-                ye = a(65),
-                Re = a(251),
-                be = a(252),
-                Ce = Boolean(
-                    'localhost' === window.location.hostname ||
-                        '[::1]' === window.location.hostname ||
-                        window.location.hostname.match(
-                            /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/,
-                        ),
-                );
-            function Te(e, t) {
-                navigator.serviceWorker
-                    .register(e)
-                    .then(function (e) {
-                        e.onupdatefound = function () {
-                            var a = e.installing;
-                            null != a &&
-                                (a.onstatechange = function () {
-                                    'installed' === a.state &&
-                                        (navigator.serviceWorker.controller
-                                            ? (console.log(
-                                                  'New content is available and will be used when all tabs for this page are closed. See https://bit.ly/CRA-PWA.',
-                                              ),
-                                              t && t.onUpdate && t.onUpdate(e))
-                                            : (console.log(
-                                                  'Content is cached for offline use.',
-                                              ),
-                                              t &&
-                                                  t.onSuccess &&
-                                                  t.onSuccess(e)));
-                                });
-                        };
-                    })
-                    .catch(function (e) {
-                        console.error(
-                            'Error during service worker registration:',
-                            e,
-                        );
-                    });
-            }
-            var Oe = {
-                totals: {},
-                states: [],
-                stateTimelines: [{ state: 'lagos', data: [] }],
-                nationalTimelines: [],
-                isLoading: !0,
-                errorOccurred: !1,
-            };
-            var ve = function () {
+                De = a(65),
+                Ne = a(251),
+                Me = a(252),
+                je = {
+                    totals: {},
+                    states: [],
+                    stateTimelines: [{ state: 'lagos', data: [] }],
+                    nationalTimelines: [],
+                    isLoading: !0,
+                    errorOccurred: !1,
+                };
+            var Be = function () {
                     var e =
                             arguments.length > 0 && void 0 !== arguments[0]
                                 ? arguments[0]
-                                : Oe,
+                                : je,
                         t = arguments.length > 1 ? arguments[1] : void 0;
                     switch (t.type) {
                         case 'FETCH_NATIONALTOTAL':
-                            return (e = Object(h.a)({}, e, {
+                            return (e = Object(f.a)({}, e, {
                                 totals: t.data,
                                 isLoading: !1,
                                 errorOccurred: !1,
                             }));
                         case 'FETCH_STATETOTAL':
-                            return (e = Object(h.a)({}, e, {
+                            return (e = Object(f.a)({}, e, {
                                 states: t.data,
                                 isLoading: !1,
                                 errorOccurred: !1,
                             }));
                         case 'FETCH_STATETIMELINE':
-                            return (e = Object(h.a)({}, e, {
+                            return (e = Object(f.a)({}, e, {
                                 stateTimelines: t.data,
                                 isLoading: !1,
                                 errorOccurred: !1,
                             }));
                         case 'FETCH_NATIONALTIMELINE':
-                            return (e = Object(h.a)({}, e, {
+                            return (e = Object(f.a)({}, e, {
                                 nationalTimelines: t.data,
                                 isLoading: !1,
                                 errorOccurred: !1,
                             }));
                         case 'API_ERROR':
-                            return (e = Object(h.a)({}, e, {
+                            return (e = Object(f.a)({}, e, {
                                 isLoading: !0,
                                 errorOccurred: !0,
                             }));
@@ -1623,67 +1871,23 @@
                             return e;
                     }
                 },
-                Pe = Object(ye.createStore)(
-                    ve,
-                    Object(Re.composeWithDevTools)(
-                        Object(ye.applyMiddleware)(be.a),
+                Se = Object(De.createStore)(
+                    Be,
+                    Object(Ne.composeWithDevTools)(
+                        Object(De.applyMiddleware)(Me.a),
                     ),
                 );
             o.a.render(
                 r.a.createElement(
-                    A.a,
-                    { store: Pe },
-                    r.a.createElement(fe, null),
+                    m.a,
+                    { store: Se },
+                    r.a.createElement(xe, null),
                 ),
                 document.getElementById('root'),
             ),
-                (function (e) {
-                    if ('serviceWorker' in navigator) {
-                        if (
-                            new URL('', window.location.href).origin !==
-                            window.location.origin
-                        )
-                            return;
-                        window.addEventListener('load', function () {
-                            var t = ''.concat('', '/service-worker.js');
-                            Ce
-                                ? (!(function (e, t) {
-                                      fetch(e)
-                                          .then(function (a) {
-                                              var n = a.headers.get(
-                                                  'content-type',
-                                              );
-                                              404 === a.status ||
-                                              (null != n &&
-                                                  -1 ===
-                                                      n.indexOf('javascript'))
-                                                  ? navigator.serviceWorker.ready.then(
-                                                        function (e) {
-                                                            e.unregister().then(
-                                                                function () {
-                                                                    window.location.reload();
-                                                                },
-                                                            );
-                                                        },
-                                                    )
-                                                  : Te(e, t);
-                                          })
-                                          .catch(function () {
-                                              console.log(
-                                                  'No internet connection found. App is running in offline mode.',
-                                              );
-                                          });
-                                  })(t, e),
-                                  navigator.serviceWorker.ready.then(
-                                      function () {
-                                          console.log(
-                                              'This web app is being served cache-first by a service worker. To learn more, visit https://bit.ly/CRA-PWA',
-                                          );
-                                      },
-                                  ))
-                                : Te(t, e);
-                        });
-                    }
+                (function () {
+                    if (he())
+                        navigator.serviceWorker.register('/service-worker.js');
                 })();
         },
         80: function (e, t) {
@@ -1693,4 +1897,4 @@
     },
     [[300, 1, 2]],
 ]);
-//# sourceMappingURL=main.1b3a16bd.chunk.js.map
+//# sourceMappingURL=main.443f3569.chunk.js.map
