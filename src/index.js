@@ -6,7 +6,6 @@ const { database } = require('./utils/database');
 const cors = require('cors');
 const path = require('path');
 const secure = require('ssl-express-www');
-// const csp = require('helmet-csp')
 
 require('dotenv').config();
 
@@ -14,7 +13,7 @@ const app = express();
 
 app.use(cors());
 
-// app.use(secure);
+app.use(secure);
 
 app.use(function (req, res, next) {
     res.setHeader('Content-Security-Policy', "script-src 'self'");
@@ -42,7 +41,6 @@ app.use(express.static(path.join(__dirname, 'react-build')));
 app.use('/api', routes);
 
 app.all('*', (req, res, next) => {
-    console.log(req.header());
     res.sendFile(path.join(__dirname, 'react-build', 'index.html'));
 });
 
