@@ -5,9 +5,8 @@ This is a full covid19 data API for nigeria with full timeline.
 Source:
 
 -   [NCDC](https://covid19.ncdc.gov.ng)
--   [Wikipedia](https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Nigeria)
 
-Live at [`https://covid19ngr.herokuapp.com`](https://covid19ngr.herokuapp.com)
+Live at [`https://covid19.ethicalhub.tech/`](https://covid19.ethicalhub.tech/)
 
 # REST API
 
