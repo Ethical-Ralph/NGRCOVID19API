@@ -15,11 +15,6 @@ app.use(cors());
 
 app.use(secure);
 
-app.use(function (req, res, next) {
-    res.setHeader('Content-Security-Policy', "script-src 'self'");
-    return next();
-});
-
 const isProd = process.env.NODE_ENV === 'production';
 
 const MONGODB_URL = isProd

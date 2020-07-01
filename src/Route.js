@@ -3,6 +3,12 @@ const Controller = require('./Controller');
 
 const app = express.Router();
 
+app.get('/', (req, res) => {
+    return res.redirect(
+        'https://github.com/Ethical-Ralph/NGRCOVID19API#readme',
+    );
+});
+
 app.get('/totals', Controller.getNationalTotals);
 
 app.get('/states', Controller.getAllStatesTotal);
