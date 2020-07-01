@@ -25,6 +25,7 @@
         "nodemailer": "^6.4.6",
         "request": "^2.88.2",
         "request-promise": "^4.2.5",
+        "ssl-express-www": "^3.0.7",
         "web-push": "^3.4.4"
     },
     "nodemonConfig": {

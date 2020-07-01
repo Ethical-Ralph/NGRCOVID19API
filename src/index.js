@@ -5,11 +5,15 @@ const { errorHandler } = require('./utils/errorhandler');
 const { database } = require('./utils/database');
 const cors = require('cors');
 const path = require('path');
+const secure = require('ssl-express-www');
+
 require('dotenv').config();
 
 const app = express();
 
 app.use(cors());
+
+app.use(secure);
 
 const isProd = process.env.NODE_ENV === 'production';
 
