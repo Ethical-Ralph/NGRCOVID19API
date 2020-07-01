@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'covid19ngr'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_eb0af5f8b6dd47ff9fdc71fea57a619a }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_74c880c2dcbf468298958b2a9f562cd5 }}
         package: .
