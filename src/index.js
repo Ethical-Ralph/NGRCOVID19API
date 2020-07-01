@@ -6,7 +6,6 @@ const { database } = require('./utils/database');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
-const database = require('../database');
 
 const app = express();
 
@@ -37,7 +36,7 @@ app.all('*', (req, res, next) => {
 });
 
 //Cron Services
-// cronService.startCronJobs();
+cronService.startCronJobs();
 
 app.use(errorHandler(app));
 
