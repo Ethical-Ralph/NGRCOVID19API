@@ -1,4 +1,4 @@
-/*! For license information please see 2.f6c6afa9.chunk.js.LICENSE.txt */
+/*! For license information please see 2.20806664.chunk.js.LICENSE.txt */
 (this.webpackJsonpcovid19app = this.webpackJsonpcovid19app || []).push([
     [2],
     [
@@ -1315,7 +1315,7 @@
                             t.closePath();
                     },
                 },
-                Ct = n(531),
+                Ct = n(534),
                 At = function (t) {
                     return function () {
                         return t;
@@ -6817,9 +6817,9 @@
             function Yo() {
                 return Xo($o.apply(null, arguments).paddingInner(1));
             }
-            var Ko = n(567),
+            var Ko = n(570),
                 Qo = n(24),
-                Zo = n(532),
+                Zo = n(535),
                 Jo = function (t) {
                     return +t;
                 },
@@ -6950,10 +6950,10 @@
                 return ui()(t, e);
             }
             var si = n(147),
-                li = n(533),
-                fi = n(566),
-                pi = n(534),
-                hi = n(535),
+                li = n(536),
+                fi = n(569),
+                pi = n(537),
+                hi = n(538),
                 di = function (t, e, n, r) {
                     var o,
                         i = Object(zo.k)(t, e, n);
@@ -7428,15 +7428,15 @@
                     Fo.apply(o, arguments)
                 );
             }
-            var Bi = n(536),
-                Ui = n(537),
-                Wi = n(538),
-                Vi = n(539),
-                qi = n(540),
-                Hi = n(541),
-                Gi = n(542),
-                $i = n(543),
-                Xi = n(571);
+            var Bi = n(539),
+                Ui = n(540),
+                Wi = n(541),
+                Vi = n(542),
+                qi = n(543),
+                Hi = n(544),
+                Gi = n(545),
+                $i = n(546),
+                Xi = n(574);
             function Yi(t) {
                 return new Date(t);
             }
@@ -7564,12 +7564,12 @@
                         arguments,
                     );
                 },
-                Ji = n(546),
-                ta = n(547),
-                ea = n(544),
-                na = n(545),
-                ra = n(548),
-                oa = n(549),
+                Ji = n(549),
+                ta = n(550),
+                ea = n(547),
+                na = n(548),
+                ra = n(551),
+                oa = n(552),
                 ia = function () {
                     return Fo.apply(
                         Qi(
@@ -18480,9 +18480,9 @@
                 a = n.n(i),
                 u = (n(0), n(50)),
                 c = n.n(u),
-                s = n(512),
-                l = n(510),
-                f = n(513),
+                s = n(515),
+                l = n(513),
+                f = n(516),
                 p = function (t) {
                     var e =
                         arguments.length > 1 && void 0 !== arguments[1]
@@ -20569,7 +20569,7 @@
                 return m;
             });
             var r = n(33),
-                o = n(530),
+                o = n(533),
                 i = n(236),
                 a = function (t, e, n) {
                     var r = new i.a();
@@ -20950,7 +20950,7 @@
                     }
                 );
             }
-            var P = n(569),
+            var P = n(572),
                 M = n(151),
                 C = n(237),
                 A = function (t, e) {
@@ -21628,7 +21628,7 @@
         },
         function (t, e, n) {
             'use strict';
-            var r = n(509);
+            var r = n(512);
             e.a = function (t, e) {
                 return e ? Object(r.a)(t, e, { clone: !1 }) : t;
             };
@@ -22479,7 +22479,7 @@
             'use strict';
             var r = n(19),
                 o = n(6),
-                i = n(509),
+                i = n(512),
                 a = n(2),
                 u = ['xs', 'sm', 'md', 'lg', 'xl'];
             function c(t) {
@@ -23068,7 +23068,7 @@
                     S(0, 11, 15, -7, 0, 24, 38, 3, 0, 9, 46, 8),
                 ],
                 T = { borderRadius: 4 },
-                P = n(568);
+                P = n(571);
             function M() {
                 var t =
                     arguments.length > 0 && void 0 !== arguments[0]
@@ -23286,7 +23286,7 @@
                     return F;
                 });
             n(3), Array.prototype.slice;
-            n(530), n(570), n(567), n(179), n(49), n(108), n(178), n(36);
+            n(533), n(573), n(570), n(179), n(49), n(108), n(178), n(36);
             function r(t) {
                 return [+t[0], +t[1]];
             }
@@ -23300,7 +23300,7 @@
                 return { type: t };
             }
             Math.cos, Math.sin, Math.PI, Math.max;
-            Array.prototype.slice, n(531);
+            Array.prototype.slice, n(534);
             n(23), Array.prototype.slice;
             var a = {},
                 u = {};
@@ -24044,18 +24044,18 @@
                 })(P);
             var A = Array.prototype;
             A.map, A.slice;
-            n(24), n(532);
-            n(147), n(533), n(566), n(534), n(535);
-            n(536),
-                n(537),
-                n(538),
-                n(539),
+            n(24), n(535);
+            n(147), n(536), n(569), n(537), n(538);
+            n(539),
                 n(540),
                 n(541),
                 n(542),
                 n(543),
-                n(571);
-            n(546), n(547), n(544), n(545), n(548), n(549);
+                n(544),
+                n(545),
+                n(546),
+                n(574);
+            n(549), n(550), n(547), n(548), n(551), n(552);
             var N = function (t) {
                     for (
                         var e = (t.length / 6) | 0, n = new Array(e), r = 0;
@@ -26208,7 +26208,7 @@
                     (t.useGeographies = g),
                     (t.useZoomPan = _),
                     Object.defineProperty(t, '__esModule', { value: !0 });
-            })(e, n(1), n(0), n(142), n(508), n(143), n(16));
+            })(e, n(1), n(0), n(142), n(511), n(143), n(16));
         },
         function (t, e, n) {
             var r,
@@ -29836,8 +29836,8 @@
                 n.d(e, 'zoomIdentity', function () {
                     return v;
                 });
-            var r = n(530),
-                o = n(570),
+            var r = n(533),
+                o = n(573),
                 i = Math.SQRT2;
             function a(t) {
                 return ((t = Math.exp(t)) + 1 / t) / 2;
@@ -30754,7 +30754,7 @@
             n.d(e, 'b', function () {
                 return l;
             });
-            var r = n(569);
+            var r = n(572);
             function o(t, e, n, r, o) {
                 var i = t * t,
                     a = i * t;
@@ -52458,6 +52458,9 @@
         },
         ,
         ,
+        ,
+        ,
+        ,
         function (t, e, n) {
             'use strict';
             n.r(e),
@@ -54583,7 +54586,7 @@
                         t.get(e).delete(n);
                     },
                 },
-                Ot = n(513),
+                Ot = n(516),
                 Et =
                     (n(0),
                     'function' === typeof Symbol && Symbol.for
@@ -55437,7 +55440,7 @@
                 return (nn += 1);
             }
             n(84);
-            var on = n(509);
+            var on = n(512);
             function an(t) {
                 var e = 'function' === typeof t;
                 return {
@@ -56399,7 +56402,7 @@
         function (t, e, n) {
             'use strict';
             var r = n(2),
-                o = n(512),
+                o = n(515),
                 i = n(71);
             e.a = function (t) {
                 var e =
@@ -57190,7 +57193,7 @@
                 a = (n(0), n(13)),
                 u = n(15),
                 c = n(22),
-                s = n(511),
+                s = n(514),
                 l = i.forwardRef(function (t, e) {
                     var n = t.classes,
                         u = t.className,
@@ -57358,8 +57361,8 @@
             });
             var r = n(2),
                 o = n(1),
-                i = n(513),
-                a = n(510);
+                i = n(516),
+                a = n(513);
             function u(t) {
                 var e =
                         arguments.length > 1 && void 0 !== arguments[1]
@@ -57751,7 +57754,7 @@
                     (f({ prop: 'size', cssProperty: 'width', transform: x }),
                     f({ prop: 'size', cssProperty: 'height', transform: x }),
                     u(w, O, E, _, k, S, f({ prop: 'boxSizing' }))),
-                T = n(568),
+                T = n(571),
                 P = u(
                     f({ prop: 'fontFamily', themeKey: 'typography' }),
                     f({ prop: 'fontSize', themeKey: 'typography' }),
@@ -57767,7 +57770,7 @@
                 N = n(13),
                 R = n(50),
                 I = n.n(R),
-                D = n(512);
+                D = n(515);
             function L(t, e) {
                 var n = {};
                 return (
@@ -57873,8 +57876,8 @@
                 return m;
             });
             var r = n(27),
-                o = n(567),
-                i = n(532),
+                o = n(570),
+                i = n(535),
                 a = n(3);
             n(24);
             function u(t) {
@@ -57898,10 +57901,10 @@
                 return this;
             }
             var s = n(147),
-                l = n(533),
-                f = n(566),
-                p = n(534),
-                h = n(535);
+                l = n(536),
+                f = n(569),
+                p = n(537),
+                h = n(538);
             function d(t) {
                 var e = t.domain;
                 return (
@@ -58389,7 +58392,7 @@
         },
         function (t, e, n) {
             'use strict';
-            var r = n(569),
+            var r = n(572),
                 o = n(151),
                 i = function (t, e) {
                     e || (e = []);
@@ -59138,12 +59141,12 @@
                 n.d(e, 'b', function () {
                     return d;
                 });
-            var r = n(544),
-                o = n(545),
-                i = n(538),
-                a = n(539),
-                u = n(536),
-                c = n(546);
+            var r = n(547),
+                o = n(548),
+                i = n(541),
+                a = n(542),
+                u = n(539),
+                c = n(549);
             function s(t) {
                 if (0 <= t.y && t.y < 100) {
                     var e = new Date(-1, t.m, t.d, t.H, t.M, t.S, t.L);
@@ -59777,4 +59780,4 @@
         },
     ],
 ]);
-//# sourceMappingURL=2.f6c6afa9.chunk.js.map
+//# sourceMappingURL=2.20806664.chunk.js.map

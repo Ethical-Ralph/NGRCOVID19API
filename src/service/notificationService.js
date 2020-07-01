@@ -47,9 +47,10 @@ const sendWebPush = async (sub, payload) => {
 
 const sendNotification = async () => {
     const allSub = await getAllNutSub();
+    // const url = `${req.protocol}://${req.get('host')}`
     const nationalTotals = await nationalTotalsService.getTotals();
     const payload = {
-        url: 'https://covid19.ethicalhub.tech',
+        url: process.env.BASE_URL,
         image:
             'https://res.cloudinary.com/eralphcloud/image/upload/v1593534116/logo_rethvw.png',
         title: 'New Covid19 stats for Nigeria',
@@ -62,7 +63,8 @@ const sendNotification = async () => {
 
     allSub.forEach(async (sub) => {
         try {
-            await sendWebPush(sub, payload);
+            const aa = await sendWebPush(sub, payload);
+            console.log(aa);
         } catch (error) {
             if (error.name === 'WebPushError' && error.statusCode == 410) {
                 await Notificationsub.findByIdAndDelete(sub._id, console.log);

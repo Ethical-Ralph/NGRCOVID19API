@@ -31,12 +31,12 @@ app.use(
     }),
 );
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'react-build')));
 
 app.use('/api', routes);
 
 app.all('*', (req, res, next) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'react-build', 'index.html'));
 });
 
 //Cron Services

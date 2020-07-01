@@ -2,7 +2,7 @@
     [0],
     {
         300: function (e, t, a) {
-            e.exports = a(507);
+            e.exports = a(510);
         },
         326: function (e) {
             e.exports = JSON.parse(
@@ -10,35 +10,44 @@
             );
         },
         506: function (e, t, a) {
-            e.exports = a.p + 'static/media/virus.6408a876.png';
+            e.exports = a.p + 'static/media/github-brands.ec5bc1b3.svg';
         },
         507: function (e, t, a) {
+            e.exports = a.p + 'static/media/twitter-brands.68d85d2c.svg';
+        },
+        508: function (e, t, a) {
+            e.exports = a.p + 'static/media/envelope-solid.3b5f693a.svg';
+        },
+        509: function (e, t, a) {
+            e.exports = a.p + 'static/media/virus.6408a876.png';
+        },
+        510: function (e, t, a) {
             'use strict';
             a.r(t);
-            var n = a(1),
-                r = a.n(n),
-                l = a(61),
-                o = a.n(l),
-                c = a(9),
-                i = a.n(c),
-                s = a(17),
-                u = a(550),
-                A = a(561),
-                E = a(562),
-                p = a(563),
-                m = a(20),
-                g = a(27),
-                d = a(253),
-                I = a(114),
-                f = a(28),
-                h = a(87),
-                y = a.n(h),
-                b = 'https://covid19ngr.herokuapp.com',
+            var n,
+                r = a(1),
+                l = a.n(r),
+                c = a(61),
+                o = a.n(c),
+                i = a(9),
+                s = a.n(i),
+                u = a(17),
+                A = a(553),
+                E = a(564),
+                p = a(565),
+                m = a(566),
+                g = a(20),
+                d = a(27),
+                h = a(253),
+                f = a(114),
+                I = a(28),
+                y = a(87),
+                b = a.n(y),
                 R = (function () {
-                    var e = Object(s.a)(
-                        i.a.mark(function e() {
+                    var e = Object(u.a)(
+                        s.a.mark(function e() {
                             var t;
-                            return i.a.wrap(
+                            return s.a.wrap(
                                 function (e) {
                                     for (;;)
                                         switch ((e.prev = e.next)) {
@@ -46,12 +55,7 @@
                                                 return (
                                                     (e.prev = 0),
                                                     (e.next = 3),
-                                                    y.a.get(
-                                                        ''.concat(
-                                                            b,
-                                                            '/api/totals',
-                                                        ),
-                                                    )
+                                                    b.a.get('/api/totals')
                                                 );
                                             case 3:
                                                 return (
@@ -83,10 +87,10 @@
                     };
                 })(),
                 C = (function () {
-                    var e = Object(s.a)(
-                        i.a.mark(function e() {
+                    var e = Object(u.a)(
+                        s.a.mark(function e() {
                             var t;
-                            return i.a.wrap(
+                            return s.a.wrap(
                                 function (e) {
                                     for (;;)
                                         switch ((e.prev = e.next)) {
@@ -94,12 +98,7 @@
                                                 return (
                                                     (e.prev = 0),
                                                     (e.next = 3),
-                                                    y.a.get(
-                                                        ''.concat(
-                                                            b,
-                                                            '/api/states',
-                                                        ),
-                                                    )
+                                                    b.a.get('/api/states')
                                                 );
                                             case 3:
                                                 return (
@@ -131,10 +130,10 @@
                     };
                 })(),
                 T = (function () {
-                    var e = Object(s.a)(
-                        i.a.mark(function e() {
+                    var e = Object(u.a)(
+                        s.a.mark(function e() {
                             var t;
-                            return i.a.wrap(
+                            return s.a.wrap(
                                 function (e) {
                                     for (;;)
                                         switch ((e.prev = e.next)) {
@@ -142,12 +141,7 @@
                                                 return (
                                                     (e.prev = 0),
                                                     (e.next = 3),
-                                                    y.a.get(
-                                                        ''.concat(
-                                                            b,
-                                                            '/api/timelines',
-                                                        ),
-                                                    )
+                                                    b.a.get('/api/timelines')
                                                 );
                                             case 3:
                                                 return (
@@ -179,10 +173,10 @@
                     };
                 })(),
                 O = (function () {
-                    var e = Object(s.a)(
-                        i.a.mark(function e() {
+                    var e = Object(u.a)(
+                        s.a.mark(function e() {
                             var t;
-                            return i.a.wrap(
+                            return s.a.wrap(
                                 function (e) {
                                     for (;;)
                                         switch ((e.prev = e.next)) {
@@ -190,11 +184,8 @@
                                                 return (
                                                     (e.prev = 0),
                                                     (e.next = 3),
-                                                    y.a.get(
-                                                        ''.concat(
-                                                            b,
-                                                            '/api/timelines/states',
-                                                        ),
+                                                    b.a.get(
+                                                        '/api/timelines/states',
                                                     )
                                                 );
                                             case 3:
@@ -237,33 +228,33 @@
                     var t = new Date(e).toDateString().split(' ');
                     return t[1] + ' ' + t[2];
                 },
-                k = function (e) {
+                w = function (e) {
                     return { type: 'FETCH_NATIONALTOTAL', data: e };
                 },
-                w = function (e) {
+                k = function (e) {
                     return {
                         type: 'FETCH_STATETOTAL',
                         data: (e = e.map(function (e) {
-                            return Object(f.a)({}, e, { state: v(e.state) });
+                            return Object(I.a)({}, e, { state: v(e.state) });
                         })),
                     };
                 },
                 x = function (e) {
                     return { type: 'FETCH_STATETIMELINE', data: e };
                 },
-                D = function (e) {
+                N = function (e) {
                     return {
                         type: 'FETCH_NATIONALTIMELINE',
                         data: (e = e.map(function (e) {
-                            return Object(f.a)({}, e, { date: P(e.date) });
+                            return Object(I.a)({}, e, { date: P(e.date) });
                         })),
                     };
                 },
-                N = a(565),
+                D = a(568),
                 M = a(76),
-                j = a(551),
+                j = a(554),
                 B = a(326),
-                S = Object(u.a)({
+                S = Object(A.a)({
                     button: {
                         padding: '9px',
                         margin: '2px',
@@ -281,17 +272,17 @@
                         padding: '10px',
                     },
                 }),
-                K = Object(m.b)(
+                K = Object(g.b)(
                     function (e) {
                         return { states: e.states, isLoading: e.isLoading };
                     },
                     {
                         getStateTotals: function () {
                             return (function () {
-                                var e = Object(s.a)(
-                                    i.a.mark(function e(t) {
+                                var e = Object(u.a)(
+                                    s.a.mark(function e(t) {
                                         var a;
-                                        return i.a.wrap(
+                                        return s.a.wrap(
                                             function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
@@ -300,337 +291,6 @@
                                                                 (e.prev = 0),
                                                                 (e.next = 3),
                                                                 C()
-                                                            );
-                                                        case 3:
-                                                            (a = e.sent),
-                                                                t(w(a.data)),
-                                                                (e.next = 10);
-                                                            break;
-                                                        case 7:
-                                                            (e.prev = 7),
-                                                                (e.t0 = e.catch(
-                                                                    0,
-                                                                )),
-                                                                t({
-                                                                    type:
-                                                                        'API_ERROR',
-                                                                });
-                                                        case 10:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            null,
-                                            [[0, 7]],
-                                        );
-                                    }),
-                                );
-                                return function (t) {
-                                    return e.apply(this, arguments);
-                                };
-                            })();
-                        },
-                    },
-                )(
-                    Object(n.memo)(function (e) {
-                        var t = e.getStateTotals,
-                            l = e.setData,
-                            o = e.states,
-                            c = e.isLoading,
-                            i = Object(n.useState)('confirmedCases'),
-                            s = Object(g.a)(i, 2),
-                            u = s[0],
-                            A = s[1],
-                            E = S(),
-                            p = function (e) {
-                                A(e);
-                            },
-                            m = Object(N.a)(function (e) {
-                                return (function (e) {
-                                    switch (u) {
-                                        case 'confirmedCases':
-                                            return Object(M.a)(5 * e);
-                                        case 'activeCases':
-                                            return Object(M.c)(3 * e);
-                                        case 'discharged':
-                                            return Object(M.b)(8 * e);
-                                        case 'death':
-                                            return Object(M.d)(30 * e);
-                                        default:
-                                            return Object(M.d)(3 * e);
-                                    }
-                                })(e);
-                            }).domain([1, 5e3]);
-                        Object(n.useEffect)(
-                            function () {
-                                t();
-                            },
-                            [t],
-                        );
-                        var d = function (e) {
-                            return o.find(function (t) {
-                                return (
-                                    v(t.state.toLowerCase()) ===
-                                    v(e.toLowerCase())
-                                );
-                            });
-                        };
-                        return r.a.createElement(
-                            'div',
-                            {
-                                style: {
-                                    backgroundColor: 'white',
-                                    padding: '20px',
-                                    borderRadius: '5%',
-                                },
-                            },
-                            r.a.createElement(
-                                j.a,
-                                { style: { color: 'green' }, variant: 'h5' },
-                                'Map',
-                            ),
-                            c &&
-                                r.a.createElement('img', {
-                                    src: a(80),
-                                    alt: 'loading',
-                                }),
-                            r.a.createElement(
-                                r.a.Fragment,
-                                null,
-                                r.a.createElement(
-                                    I.ComposableMap,
-                                    {
-                                        projection: 'geoAzimuthalEqualArea',
-                                        projectionConfig: {
-                                            scale: 3e3,
-                                            center: [8.49, 9.15],
-                                        },
-                                    },
-                                    r.a.createElement(
-                                        I.Geographies,
-                                        { 'data-tip': 'map', geography: B },
-                                        function (e) {
-                                            return e.geographies.map(function (
-                                                e,
-                                            ) {
-                                                var t = d(e.properties.ID),
-                                                    a = t ? m(t[u]) : '#F5F4F9';
-                                                return r.a.createElement(
-                                                    I.Geography,
-                                                    {
-                                                        key: e.rsmKey,
-                                                        geography: e,
-                                                        stroke:
-                                                            'rgb(209, 33, 32)',
-                                                        onMouseEnter: function () {
-                                                            return (function (
-                                                                e,
-                                                            ) {
-                                                                var t = d(
-                                                                    e.properties
-                                                                        .ID,
-                                                                );
-                                                                l(t);
-                                                            })(e);
-                                                        },
-                                                        onMouseLeave: function () {
-                                                            return l({});
-                                                        },
-                                                        fill: a,
-                                                    },
-                                                );
-                                            });
-                                        },
-                                    ),
-                                ),
-                                r.a.createElement(
-                                    'div',
-                                    { className: E.buttongroup },
-                                    r.a.createElement(
-                                        'button',
-                                        {
-                                            className: E.button,
-                                            style: { backgroundColor: 'blue' },
-                                            onClick: function () {
-                                                return p('confirmedCases');
-                                            },
-                                        },
-                                        'Confirmed',
-                                    ),
-                                    r.a.createElement(
-                                        'button',
-                                        {
-                                            className: E.button,
-                                            style: {
-                                                backgroundColor: 'orange',
-                                            },
-                                            onClick: function () {
-                                                return p('activeCases');
-                                            },
-                                        },
-                                        'Active',
-                                    ),
-                                    r.a.createElement(
-                                        'button',
-                                        {
-                                            className: E.button,
-                                            style: { backgroundColor: 'green' },
-                                            onClick: function () {
-                                                return p('discharged');
-                                            },
-                                        },
-                                        'Discharged',
-                                    ),
-                                    r.a.createElement('br', null),
-                                    r.a.createElement(
-                                        'button',
-                                        {
-                                            className: E.button,
-                                            style: { backgroundColor: 'red' },
-                                            onClick: function () {
-                                                return p('death');
-                                            },
-                                        },
-                                        'Death',
-                                    ),
-                                ),
-                            ),
-                        );
-                    }),
-                ),
-                L = function () {
-                    var e = Object(n.useState)({}),
-                        t = Object(g.a)(e, 2),
-                        a = t[0],
-                        l = t[1];
-                    return r.a.createElement(
-                        r.a.Fragment,
-                        null,
-                        r.a.createElement(K, { setData: l }),
-                        r.a.createElement(
-                            d.a,
-                            null,
-                            a
-                                ? r.a.createElement(
-                                      r.a.Fragment,
-                                      null,
-                                      r.a.createElement(
-                                          'span',
-                                          null,
-                                          'State: ',
-                                          a.state,
-                                      ),
-                                      r.a.createElement('br', null),
-                                      r.a.createElement(
-                                          'span',
-                                          null,
-                                          'confirmed: ',
-                                          a.confirmedCases,
-                                      ),
-                                      r.a.createElement('br', null),
-                                      r.a.createElement(
-                                          'span',
-                                          null,
-                                          'recovered: ',
-                                          a.discharged,
-                                      ),
-                                      r.a.createElement('br', null),
-                                      r.a.createElement(
-                                          'span',
-                                          null,
-                                          'deaths: ',
-                                          a.death,
-                                      ),
-                                  )
-                                : r.a.createElement(
-                                      'div',
-                                      null,
-                                      'No data for the selected region',
-                                  ),
-                        ),
-                    );
-                },
-                J = a(552),
-                F = a(241),
-                Q = a.n(F),
-                U = function (e) {
-                    var t = e.title,
-                        n = e.number,
-                        l = e.classes;
-                    return r.a.createElement(
-                        r.a.Fragment,
-                        null,
-                        r.a.createElement(
-                            'div',
-                            {
-                                style: {
-                                    backgroundColor: 'white',
-                                    padding: '10px',
-                                    borderRadius: '10%',
-                                },
-                            },
-                            r.a.createElement(
-                                'div',
-                                {
-                                    className: l,
-                                    style: { textAlign: 'center' },
-                                },
-                                r.a.createElement(
-                                    j.a,
-                                    null,
-                                    r.a.createElement('b', null, t),
-                                ),
-                                r.a.createElement(
-                                    j.a,
-                                    null,
-                                    n
-                                        ? r.a.createElement(
-                                              'b',
-                                              { style: { fontSize: '30px' } },
-                                              r.a.createElement(Q.a, {
-                                                  start: 0,
-                                                  end: n,
-                                                  duration: 2.75,
-                                                  separator: ',',
-                                              }),
-                                          )
-                                        : r.a.createElement('img', {
-                                              src: a(80),
-                                              alt: 'loading',
-                                          }),
-                                ),
-                            ),
-                        ),
-                    );
-                },
-                W = Object(u.a)({
-                    root: { display: 'flex', justifyContent: 'center' },
-                    Paper: { padding: '30px', margin: '10px' },
-                    confirmed: { color: '#202090' },
-                    discharged: { color: 'green' },
-                    active: { color: 'orange' },
-                    death: { color: 'red' },
-                }),
-                q = Object(m.b)(
-                    function (e) {
-                        return { totals: e.totals };
-                    },
-                    {
-                        getNationalTotals: function () {
-                            return (function () {
-                                var e = Object(s.a)(
-                                    i.a.mark(function e(t) {
-                                        var a;
-                                        return i.a.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            return (
-                                                                (e.prev = 0),
-                                                                (e.next = 3),
-                                                                R()
                                                             );
                                                         case 3:
                                                             (a = e.sent),
@@ -663,18 +323,349 @@
                             })();
                         },
                     },
+                )(
+                    Object(r.memo)(function (e) {
+                        var t = e.getStateTotals,
+                            n = e.setData,
+                            c = e.states,
+                            o = e.isLoading,
+                            i = Object(r.useState)('confirmedCases'),
+                            s = Object(d.a)(i, 2),
+                            u = s[0],
+                            A = s[1],
+                            E = S(),
+                            p = function (e) {
+                                A(e);
+                            },
+                            m = Object(D.a)(function (e) {
+                                return (function (e) {
+                                    switch (u) {
+                                        case 'confirmedCases':
+                                            return Object(M.a)(5 * e);
+                                        case 'activeCases':
+                                            return Object(M.c)(3 * e);
+                                        case 'discharged':
+                                            return Object(M.b)(8 * e);
+                                        case 'death':
+                                            return Object(M.d)(30 * e);
+                                        default:
+                                            return Object(M.d)(3 * e);
+                                    }
+                                })(e);
+                            }).domain([1, 5e3]);
+                        Object(r.useEffect)(
+                            function () {
+                                t();
+                            },
+                            [t],
+                        );
+                        var g = function (e) {
+                            return c.find(function (t) {
+                                return (
+                                    v(t.state.toLowerCase()) ===
+                                    v(e.toLowerCase())
+                                );
+                            });
+                        };
+                        return l.a.createElement(
+                            'div',
+                            {
+                                style: {
+                                    backgroundColor: 'white',
+                                    padding: '20px',
+                                    borderRadius: '5%',
+                                },
+                            },
+                            l.a.createElement(
+                                j.a,
+                                { style: { color: 'green' }, variant: 'h5' },
+                                'Map',
+                            ),
+                            o &&
+                                l.a.createElement('img', {
+                                    src: a(80),
+                                    alt: 'loading',
+                                }),
+                            l.a.createElement(
+                                l.a.Fragment,
+                                null,
+                                l.a.createElement(
+                                    f.ComposableMap,
+                                    {
+                                        projection: 'geoAzimuthalEqualArea',
+                                        projectionConfig: {
+                                            scale: 3e3,
+                                            center: [8.49, 9.15],
+                                        },
+                                    },
+                                    l.a.createElement(
+                                        f.Geographies,
+                                        { 'data-tip': 'map', geography: B },
+                                        function (e) {
+                                            return e.geographies.map(function (
+                                                e,
+                                            ) {
+                                                var t = g(e.properties.ID),
+                                                    a = t ? m(t[u]) : '#F5F4F9';
+                                                return l.a.createElement(
+                                                    f.Geography,
+                                                    {
+                                                        key: e.rsmKey,
+                                                        geography: e,
+                                                        stroke:
+                                                            'rgb(209, 33, 32)',
+                                                        onMouseEnter: function () {
+                                                            return (function (
+                                                                e,
+                                                            ) {
+                                                                var t = g(
+                                                                    e.properties
+                                                                        .ID,
+                                                                );
+                                                                n(t);
+                                                            })(e);
+                                                        },
+                                                        onMouseLeave: function () {
+                                                            return n({});
+                                                        },
+                                                        fill: a,
+                                                    },
+                                                );
+                                            });
+                                        },
+                                    ),
+                                ),
+                                l.a.createElement(
+                                    'div',
+                                    { className: E.buttongroup },
+                                    l.a.createElement(
+                                        'button',
+                                        {
+                                            className: E.button,
+                                            style: { backgroundColor: 'blue' },
+                                            onClick: function () {
+                                                return p('confirmedCases');
+                                            },
+                                        },
+                                        'Confirmed',
+                                    ),
+                                    l.a.createElement(
+                                        'button',
+                                        {
+                                            className: E.button,
+                                            style: {
+                                                backgroundColor: 'orange',
+                                            },
+                                            onClick: function () {
+                                                return p('activeCases');
+                                            },
+                                        },
+                                        'Active',
+                                    ),
+                                    l.a.createElement(
+                                        'button',
+                                        {
+                                            className: E.button,
+                                            style: { backgroundColor: 'green' },
+                                            onClick: function () {
+                                                return p('discharged');
+                                            },
+                                        },
+                                        'Discharged',
+                                    ),
+                                    l.a.createElement('br', null),
+                                    l.a.createElement(
+                                        'button',
+                                        {
+                                            className: E.button,
+                                            style: { backgroundColor: 'red' },
+                                            onClick: function () {
+                                                return p('death');
+                                            },
+                                        },
+                                        'Death',
+                                    ),
+                                ),
+                            ),
+                        );
+                    }),
+                ),
+                L = function () {
+                    var e = Object(r.useState)({}),
+                        t = Object(d.a)(e, 2),
+                        a = t[0],
+                        n = t[1];
+                    return l.a.createElement(
+                        l.a.Fragment,
+                        null,
+                        l.a.createElement(K, { setData: n }),
+                        l.a.createElement(
+                            h.a,
+                            null,
+                            a
+                                ? l.a.createElement(
+                                      l.a.Fragment,
+                                      null,
+                                      l.a.createElement(
+                                          'span',
+                                          null,
+                                          'State: ',
+                                          a.state,
+                                      ),
+                                      l.a.createElement('br', null),
+                                      l.a.createElement(
+                                          'span',
+                                          null,
+                                          'Confirmed: ',
+                                          a.confirmedCases,
+                                      ),
+                                      l.a.createElement('br', null),
+                                      l.a.createElement(
+                                          'span',
+                                          null,
+                                          'Discharged: ',
+                                          a.discharged,
+                                      ),
+                                      l.a.createElement('br', null),
+                                      l.a.createElement(
+                                          'span',
+                                          null,
+                                          'Deaths: ',
+                                          a.death,
+                                      ),
+                                  )
+                                : l.a.createElement(
+                                      'div',
+                                      null,
+                                      'No data for the selected region',
+                                  ),
+                        ),
+                    );
+                },
+                J = a(555),
+                F = a(241),
+                Q = a.n(F),
+                U = function (e) {
+                    var t = e.title,
+                        n = e.number,
+                        r = e.classes;
+                    return l.a.createElement(
+                        l.a.Fragment,
+                        null,
+                        l.a.createElement(
+                            'div',
+                            {
+                                style: {
+                                    backgroundColor: 'white',
+                                    padding: '10px',
+                                    borderRadius: '10%',
+                                },
+                            },
+                            l.a.createElement(
+                                'div',
+                                {
+                                    className: r,
+                                    style: { textAlign: 'center' },
+                                },
+                                l.a.createElement(
+                                    j.a,
+                                    null,
+                                    l.a.createElement('b', null, t),
+                                ),
+                                l.a.createElement(
+                                    j.a,
+                                    null,
+                                    n
+                                        ? l.a.createElement(
+                                              'b',
+                                              { style: { fontSize: '30px' } },
+                                              l.a.createElement(Q.a, {
+                                                  start: 0,
+                                                  end: n,
+                                                  duration: 2.75,
+                                                  separator: ',',
+                                              }),
+                                          )
+                                        : l.a.createElement('img', {
+                                              src: a(80),
+                                              alt: 'loading',
+                                          }),
+                                ),
+                            ),
+                        ),
+                    );
+                },
+                W = Object(A.a)({
+                    root: { display: 'flex', justifyContent: 'center' },
+                    Paper: { padding: '30px', margin: '10px' },
+                    confirmed: { color: '#202090' },
+                    discharged: { color: 'green' },
+                    active: { color: 'orange' },
+                    death: { color: 'red' },
+                }),
+                q = Object(g.b)(
+                    function (e) {
+                        return { totals: e.totals };
+                    },
+                    {
+                        getNationalTotals: function () {
+                            return (function () {
+                                var e = Object(u.a)(
+                                    s.a.mark(function e(t) {
+                                        var a;
+                                        return s.a.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (
+                                                                (e.prev = 0),
+                                                                (e.next = 3),
+                                                                R()
+                                                            );
+                                                        case 3:
+                                                            (a = e.sent),
+                                                                t(w(a.data)),
+                                                                (e.next = 10);
+                                                            break;
+                                                        case 7:
+                                                            (e.prev = 7),
+                                                                (e.t0 = e.catch(
+                                                                    0,
+                                                                )),
+                                                                t({
+                                                                    type:
+                                                                        'API_ERROR',
+                                                                });
+                                                        case 10:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            null,
+                                            [[0, 7]],
+                                        );
+                                    }),
+                                );
+                                return function (t) {
+                                    return e.apply(this, arguments);
+                                };
+                            })();
+                        },
+                    },
                 )(function (e) {
                     var t = e.totals,
                         a = e.getNationalTotals,
-                        l = W();
+                        n = W();
                     return (
-                        Object(n.useEffect)(
+                        Object(r.useEffect)(
                             function () {
                                 a();
                             },
                             [a],
                         ),
-                        r.a.createElement(
+                        l.a.createElement(
                             J.a,
                             {
                                 item: !0,
@@ -684,39 +675,39 @@
                                 justify: 'center',
                                 alignItems: 'center',
                             },
-                            r.a.createElement(
+                            l.a.createElement(
                                 J.a,
                                 { item: !0, xs: 6, md: 3 },
-                                r.a.createElement(U, {
+                                l.a.createElement(U, {
                                     title: 'Confirmed',
-                                    classes: l.confirmed,
+                                    classes: n.confirmed,
                                     number: t.confirmedCases,
                                 }),
                             ),
-                            r.a.createElement(
+                            l.a.createElement(
                                 J.a,
                                 { item: !0, xs: 6, md: 3 },
-                                r.a.createElement(U, {
+                                l.a.createElement(U, {
                                     title: 'Active',
-                                    classes: l.active,
+                                    classes: n.active,
                                     number: t.activeCases,
                                 }),
                             ),
-                            r.a.createElement(
+                            l.a.createElement(
                                 J.a,
                                 { item: !0, xs: 6, md: 3 },
-                                r.a.createElement(U, {
+                                l.a.createElement(U, {
                                     title: 'Discharged',
-                                    classes: l.discharged,
+                                    classes: n.discharged,
                                     number: t.discharged,
                                 }),
                             ),
-                            r.a.createElement(
+                            l.a.createElement(
                                 J.a,
                                 { item: !0, xs: 6, md: 3 },
-                                r.a.createElement(U, {
+                                l.a.createElement(U, {
                                     title: 'Death',
-                                    classes: l.death,
+                                    classes: n.death,
                                     number: t.death,
                                 }),
                             ),
@@ -724,13 +715,13 @@
                     );
                 }),
                 H = a(15),
-                V = a(556),
-                G = a(558),
-                Y = a(553),
-                Z = a(555),
-                z = a(557),
-                X = a(554),
-                _ = a(511),
+                V = a(559),
+                G = a(561),
+                Y = a(556),
+                Z = a(558),
+                z = a(560),
+                X = a(557),
+                _ = a(514),
                 $ = Object(H.a)(function (e) {
                     return {
                         head: {
@@ -751,52 +742,52 @@
                 })(X.a),
                 te = function (e) {
                     var t = e.image;
-                    return r.a.createElement(
+                    return l.a.createElement(
                         ee,
                         null,
-                        r.a.createElement(
+                        l.a.createElement(
                             $,
                             { component: 'th', scope: 'row' },
                             t,
                         ),
-                        r.a.createElement($, { align: 'right' }, ' ', t),
-                        r.a.createElement($, { align: 'right' }, ' ', t),
-                        r.a.createElement($, { align: 'right' }, ' ', t),
-                        r.a.createElement($, { align: 'right' }, ' ', t),
+                        l.a.createElement($, { align: 'right' }, ' ', t),
+                        l.a.createElement($, { align: 'right' }, ' ', t),
+                        l.a.createElement($, { align: 'right' }, ' ', t),
+                        l.a.createElement($, { align: 'right' }, ' ', t),
                     );
                 },
-                ae = Object(u.a)({
+                ae = Object(A.a)({
                     table: { Width: 100 },
                     container: { maxHeight: 440 },
                 }),
-                ne = Object(m.b)(function (e) {
+                ne = Object(g.b)(function (e) {
                     return { states: e.states, isLoading: e.isLoading };
                 })(function (e) {
                     var t = e.states,
                         n = e.isLoading,
-                        l = ae();
-                    return r.a.createElement(
+                        r = ae();
+                    return l.a.createElement(
                         Z.a,
-                        { className: l.container, component: _.a },
-                        r.a.createElement(
+                        { className: r.container, component: _.a },
+                        l.a.createElement(
                             V.a,
                             {
                                 stickyHeader: !0,
-                                className: l.table,
+                                className: r.table,
                                 'aria-label': 'customized table',
                             },
-                            r.a.createElement(
+                            l.a.createElement(
                                 z.a,
                                 null,
-                                r.a.createElement(
+                                l.a.createElement(
                                     X.a,
                                     null,
-                                    r.a.createElement(
+                                    l.a.createElement(
                                         Y.a,
                                         { style: { fontWeight: 'bold' } },
                                         'State',
                                     ),
-                                    r.a.createElement(
+                                    l.a.createElement(
                                         Y.a,
                                         {
                                             style: {
@@ -807,7 +798,7 @@
                                         },
                                         'Confirmed',
                                     ),
-                                    r.a.createElement(
+                                    l.a.createElement(
                                         Y.a,
                                         {
                                             style: {
@@ -818,7 +809,7 @@
                                         },
                                         'Active',
                                     ),
-                                    r.a.createElement(
+                                    l.a.createElement(
                                         Y.a,
                                         {
                                             style: {
@@ -829,7 +820,7 @@
                                         },
                                         'Discharged',
                                     ),
-                                    r.a.createElement(
+                                    l.a.createElement(
                                         Y.a,
                                         {
                                             style: {
@@ -842,21 +833,21 @@
                                     ),
                                 ),
                             ),
-                            r.a.createElement(
+                            l.a.createElement(
                                 G.a,
                                 null,
                                 n
-                                    ? r.a.createElement(te, {
-                                          image: r.a.createElement('img', {
+                                    ? l.a.createElement(te, {
+                                          image: l.a.createElement('img', {
                                               src: a(80),
                                               alt: 'loading',
                                           }),
                                       })
                                     : t.map(function (e) {
-                                          return r.a.createElement(
+                                          return l.a.createElement(
                                               ee,
                                               { key: e.state },
-                                              r.a.createElement(
+                                              l.a.createElement(
                                                   $,
                                                   {
                                                       component: 'th',
@@ -864,22 +855,22 @@
                                                   },
                                                   e.state,
                                               ),
-                                              r.a.createElement(
+                                              l.a.createElement(
                                                   $,
                                                   { align: 'right' },
                                                   e.confirmedCases,
                                               ),
-                                              r.a.createElement(
+                                              l.a.createElement(
                                                   $,
                                                   { align: 'right' },
                                                   e.activeCases,
                                               ),
-                                              r.a.createElement(
+                                              l.a.createElement(
                                                   $,
                                                   { align: 'right' },
                                                   e.discharged,
                                               ),
-                                              r.a.createElement(
+                                              l.a.createElement(
                                                   $,
                                                   { align: 'right' },
                                                   e.death,
@@ -891,7 +882,7 @@
                     );
                 }),
                 re = a(10),
-                le = Object(m.b)(
+                le = Object(g.b)(
                     function (e) {
                         return {
                             nationalTimelines: e.nationalTimelines,
@@ -901,10 +892,10 @@
                     {
                         getNationalTimelines: function () {
                             return (function () {
-                                var e = Object(s.a)(
-                                    i.a.mark(function e(t) {
+                                var e = Object(u.a)(
+                                    s.a.mark(function e(t) {
                                         var a;
-                                        return i.a.wrap(
+                                        return s.a.wrap(
                                             function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
@@ -916,7 +907,7 @@
                                                             );
                                                         case 3:
                                                             (a = e.sent),
-                                                                t(D(a.data)),
+                                                                t(N(a.data)),
                                                                 (e.next = 10);
                                                             break;
                                                         case 7:
@@ -947,24 +938,24 @@
                     },
                 )(function (e) {
                     var t = e.nationalTimelines,
-                        l = e.getNationalTimelines,
-                        o = e.isLoading;
+                        n = e.getNationalTimelines,
+                        c = e.isLoading;
                     return (
-                        Object(n.useEffect)(
+                        Object(r.useEffect)(
                             function () {
-                                l();
+                                n();
                             },
-                            [l],
+                            [n],
                         ),
-                        o
-                            ? r.a.createElement('img', {
+                        c
+                            ? l.a.createElement('img', {
                                   src: a(80),
                                   alt: 'loading',
                               })
-                            : r.a.createElement(
-                                  r.a.Fragment,
+                            : l.a.createElement(
+                                  l.a.Fragment,
                                   null,
-                                  r.a.createElement(
+                                  l.a.createElement(
                                       'div',
                                       {
                                           style: {
@@ -975,30 +966,30 @@
                                               height: 300,
                                           },
                                       },
-                                      r.a.createElement(
+                                      l.a.createElement(
                                           'div',
                                           null,
                                           'Daily Timeline',
                                       ),
-                                      r.a.createElement(
+                                      l.a.createElement(
                                           re.e,
                                           null,
-                                          r.a.createElement(
+                                          l.a.createElement(
                                               re.b,
                                               {
                                                   width: 100,
                                                   height: 300,
                                                   data: t,
                                               },
-                                              r.a.createElement(re.c, {
+                                              l.a.createElement(re.c, {
                                                   strokeDasharray: '3 3',
                                               }),
-                                              r.a.createElement(re.g, {
+                                              l.a.createElement(re.g, {
                                                   dataKey: 'date',
                                               }),
-                                              r.a.createElement(re.h, null),
-                                              r.a.createElement(re.f, null),
-                                              r.a.createElement(re.a, {
+                                              l.a.createElement(re.h, null),
+                                              l.a.createElement(re.f, null),
+                                              l.a.createElement(re.a, {
                                                   type: 'monotone',
                                                   dataKey: 'total',
                                                   fill: 'red',
@@ -1006,8 +997,8 @@
                                           ),
                                       ),
                                   ),
-                                  r.a.createElement('hr', null),
-                                  r.a.createElement(
+                                  l.a.createElement('hr', null),
+                                  l.a.createElement(
                                       'div',
                                       {
                                           style: {
@@ -1018,26 +1009,26 @@
                                               height: 300,
                                           },
                                       },
-                                      r.a.createElement(
+                                      l.a.createElement(
                                           'div',
                                           null,
                                           'Total Timeline',
                                       ),
-                                      r.a.createElement(
+                                      l.a.createElement(
                                           re.e,
                                           null,
-                                          r.a.createElement(
+                                          l.a.createElement(
                                               re.b,
                                               { data: t },
-                                              r.a.createElement(re.c, {
+                                              l.a.createElement(re.c, {
                                                   strokeDasharray: '3 3',
                                               }),
-                                              r.a.createElement(re.g, {
+                                              l.a.createElement(re.g, {
                                                   dataKey: 'date',
                                               }),
-                                              r.a.createElement(re.h, null),
-                                              r.a.createElement(re.f, null),
-                                              r.a.createElement(re.a, {
+                                              l.a.createElement(re.h, null),
+                                              l.a.createElement(re.f, null),
+                                              l.a.createElement(re.a, {
                                                   type: 'monotone',
                                                   dataKey: 'totalConfirmed',
                                                   fill: 'blue',
@@ -1048,7 +1039,7 @@
                               )
                     );
                 }),
-                oe = Object(m.b)(
+                ce = Object(g.b)(
                     function (e) {
                         return {
                             stateTimelines: e.stateTimelines,
@@ -1061,10 +1052,10 @@
                     {
                         getStateTimelines: function () {
                             return (function () {
-                                var e = Object(s.a)(
-                                    i.a.mark(function e(t) {
+                                var e = Object(u.a)(
+                                    s.a.mark(function e(t) {
                                         var a;
-                                        return i.a.wrap(
+                                        return s.a.wrap(
                                             function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
@@ -1107,11 +1098,11 @@
                     },
                 )(function (e) {
                     var t = e.stateTimelines,
-                        l = e.getStateTimelines,
-                        o = e.statelist,
-                        c = e.isLoading,
-                        i = Object(n.useState)('lagos'),
-                        s = Object(g.a)(i, 2),
+                        n = e.getStateTimelines,
+                        c = e.statelist,
+                        o = e.isLoading,
+                        i = Object(r.useState)('lagos'),
+                        s = Object(d.a)(i, 2),
                         u = s[0],
                         A = s[1],
                         E = function () {
@@ -1121,24 +1112,24 @@
                                 })
                                 .data.map(function (e) {
                                     var t = P(e.date);
-                                    return Object(f.a)({}, e, { date: t });
+                                    return Object(I.a)({}, e, { date: t });
                                 });
                         };
-                    Object(n.useEffect)(
+                    Object(r.useEffect)(
                         function () {
-                            l();
+                            n();
                         },
-                        [l],
+                        [n],
                     );
-                    return c
-                        ? r.a.createElement('img', {
+                    return o
+                        ? l.a.createElement('img', {
                               src: a(80),
                               alt: 'loading',
                           })
-                        : r.a.createElement(
-                              r.a.Fragment,
+                        : l.a.createElement(
+                              l.a.Fragment,
                               null,
-                              r.a.createElement(
+                              l.a.createElement(
                                   'div',
                                   {
                                       style: {
@@ -1149,7 +1140,7 @@
                                   },
                                   v(u),
                               ),
-                              r.a.createElement(
+                              l.a.createElement(
                                   'div',
                                   {
                                       style: {
@@ -1160,27 +1151,27 @@
                                           flexDirection: 'column',
                                       },
                                   },
-                                  r.a.createElement(
+                                  l.a.createElement(
                                       'div',
                                       null,
                                       'Daily Timeline',
                                   ),
-                                  r.a.createElement(
+                                  l.a.createElement(
                                       re.e,
                                       null,
-                                      r.a.createElement(
+                                      l.a.createElement(
                                           re.b,
                                           { data: E() },
-                                          r.a.createElement(re.c, {
+                                          l.a.createElement(re.c, {
                                               strokeDasharray: '3 3',
                                           }),
-                                          r.a.createElement(re.g, {
+                                          l.a.createElement(re.g, {
                                               dataKey: 'date',
                                           }),
-                                          r.a.createElement(re.h, null),
-                                          r.a.createElement(re.f, null),
-                                          r.a.createElement(re.d, null),
-                                          r.a.createElement(re.a, {
+                                          l.a.createElement(re.h, null),
+                                          l.a.createElement(re.f, null),
+                                          l.a.createElement(re.d, null),
+                                          l.a.createElement(re.a, {
                                               dataKey: 'confirmed',
                                               stackId: 'a',
                                               fill: 'red',
@@ -1188,8 +1179,8 @@
                                       ),
                                   ),
                               ),
-                              r.a.createElement('hr', null),
-                              r.a.createElement(
+                              l.a.createElement('hr', null),
+                              l.a.createElement(
                                   'div',
                                   {
                                       style: {
@@ -1200,27 +1191,27 @@
                                           flexDirection: 'column',
                                       },
                                   },
-                                  r.a.createElement(
+                                  l.a.createElement(
                                       'div',
                                       null,
                                       'Total Timelines',
                                   ),
-                                  r.a.createElement(
+                                  l.a.createElement(
                                       re.e,
                                       null,
-                                      r.a.createElement(
+                                      l.a.createElement(
                                           re.b,
                                           { data: E() },
-                                          r.a.createElement(re.c, {
+                                          l.a.createElement(re.c, {
                                               strokeDasharray: '3 3',
                                           }),
-                                          r.a.createElement(re.g, {
+                                          l.a.createElement(re.g, {
                                               dataKey: 'date',
                                           }),
-                                          r.a.createElement(re.h, null),
-                                          r.a.createElement(re.f, null),
-                                          r.a.createElement(re.d, null),
-                                          r.a.createElement(re.a, {
+                                          l.a.createElement(re.h, null),
+                                          l.a.createElement(re.f, null),
+                                          l.a.createElement(re.d, null),
+                                          l.a.createElement(re.a, {
                                               dataKey: 'totalConfirmed',
                                               stackId: 'a',
                                               fill: 'blue',
@@ -1228,11 +1219,11 @@
                                       ),
                                   ),
                               ),
-                              r.a.createElement(
+                              l.a.createElement(
                                   'center',
                                   null,
-                                  o.map(function (e) {
-                                      return r.a.createElement(
+                                  c.map(function (e) {
+                                      return l.a.createElement(
                                           'button',
                                           {
                                               key: e,
@@ -1253,13 +1244,27 @@
                                   }),
                               ),
                           );
-                });
-            var ce,
+                }),
+                oe = Object(A.a)({
+                    roundwhite: {
+                        backgroundColor: 'white',
+                        padding: '20px',
+                        borderRadius: '5%',
+                    },
+                    icon: {
+                        width: '1.5rem',
+                        height: '1.5rem',
+                        marginLeft: '10px',
+                        transition: 'all 0.5s ease',
+                        '&:hover': { transform: 'scale(1.5)' },
+                    },
+                }),
                 ie = function () {
-                    return r.a.createElement(
-                        r.a.Fragment,
+                    var e = oe();
+                    return l.a.createElement(
+                        l.a.Fragment,
                         null,
-                        r.a.createElement(
+                        l.a.createElement(
                             J.a,
                             {
                                 container: !0,
@@ -1267,8 +1272,8 @@
                                 justify: 'center',
                                 alignItems: 'center',
                             },
-                            r.a.createElement(q, null),
-                            r.a.createElement(
+                            l.a.createElement(q, null),
+                            l.a.createElement(
                                 J.a,
                                 {
                                     container: !0,
@@ -1276,13 +1281,13 @@
                                     xs: 12,
                                     justify: 'center',
                                 },
-                                r.a.createElement(
+                                l.a.createElement(
                                     J.a,
                                     { item: !0, xs: 12 },
-                                    r.a.createElement(L, null),
+                                    l.a.createElement(L, null),
                                 ),
                             ),
-                            r.a.createElement(
+                            l.a.createElement(
                                 J.a,
                                 {
                                     container: !0,
@@ -1291,13 +1296,13 @@
                                     justify: 'center',
                                     alignItems: 'center',
                                 },
-                                r.a.createElement(
+                                l.a.createElement(
                                     J.a,
                                     { item: !0, xs: 12 },
-                                    r.a.createElement(ne, null),
+                                    l.a.createElement(ne, null),
                                 ),
                             ),
-                            r.a.createElement(
+                            l.a.createElement(
                                 J.a,
                                 {
                                     container: !0,
@@ -1306,28 +1311,22 @@
                                     justify: 'center',
                                     alignItems: 'center',
                                 },
-                                r.a.createElement(
+                                l.a.createElement(
                                     J.a,
                                     { item: !0, xs: 12 },
-                                    r.a.createElement(
+                                    l.a.createElement(
                                         'div',
-                                        {
-                                            style: {
-                                                backgroundColor: 'white',
-                                                padding: '20px',
-                                                borderRadius: '5%',
-                                            },
-                                        },
-                                        r.a.createElement(
+                                        { className: e.roundwhite },
+                                        l.a.createElement(
                                             j.a,
                                             { style: { color: 'green' } },
                                             'National Timeline Charts',
                                         ),
-                                        r.a.createElement(le, null),
+                                        l.a.createElement(le, null),
                                     ),
                                 ),
                             ),
-                            r.a.createElement(
+                            l.a.createElement(
                                 J.a,
                                 {
                                     container: !0,
@@ -1336,28 +1335,22 @@
                                     justify: 'center',
                                     alignItems: 'center',
                                 },
-                                r.a.createElement(
+                                l.a.createElement(
                                     J.a,
                                     { item: !0, xs: 12 },
-                                    r.a.createElement(
+                                    l.a.createElement(
                                         'div',
-                                        {
-                                            style: {
-                                                backgroundColor: 'white',
-                                                padding: '20px',
-                                                borderRadius: '5%',
-                                            },
-                                        },
-                                        r.a.createElement(
+                                        { className: e.roundwhite },
+                                        l.a.createElement(
                                             j.a,
                                             { style: { color: 'green' } },
                                             'State Timeline Charts',
                                         ),
-                                        r.a.createElement(oe, null),
+                                        l.a.createElement(ce, null),
                                     ),
                                 ),
                             ),
-                            r.a.createElement(
+                            l.a.createElement(
                                 J.a,
                                 {
                                     container: !0,
@@ -1366,10 +1359,10 @@
                                     justify: 'center',
                                     alignItems: 'center',
                                 },
-                                r.a.createElement(
+                                l.a.createElement(
                                     J.a,
                                     { item: !0, xs: 12 },
-                                    r.a.createElement(
+                                    l.a.createElement(
                                         'div',
                                         {
                                             style: {
@@ -1377,17 +1370,17 @@
                                                 padding: '1.5rem',
                                             },
                                         },
-                                        r.a.createElement(
+                                        l.a.createElement(
                                             j.a,
                                             { style: { color: 'green' } },
                                             'Made with ',
-                                            r.a.createElement(
+                                            l.a.createElement(
                                                 'span',
                                                 { style: { color: 'red' } },
                                                 '\u2665',
                                             ),
-                                            ' by ',
-                                            r.a.createElement(
+                                            ' by',
+                                            l.a.createElement(
                                                 'a',
                                                 {
                                                     href:
@@ -1397,11 +1390,51 @@
                                                         textDecoration: 'none',
                                                     },
                                                 },
-                                                r.a.createElement(
+                                                l.a.createElement(
                                                     'b',
                                                     null,
-                                                    'Ethical Ralph',
+                                                    ' Ethical Ralph',
                                                 ),
+                                            ),
+                                        ),
+                                        l.a.createElement(
+                                            'div',
+                                            null,
+                                            l.a.createElement(
+                                                'a',
+                                                {
+                                                    href:
+                                                        'https://github.com/Ethical-Ralph',
+                                                },
+                                                l.a.createElement('img', {
+                                                    src: a(506),
+                                                    className: e.icon,
+                                                    alt: 'github',
+                                                }),
+                                            ),
+                                            l.a.createElement(
+                                                'a',
+                                                {
+                                                    href:
+                                                        'https://twitter.com/EthicalRalph',
+                                                },
+                                                l.a.createElement('img', {
+                                                    src: a(507),
+                                                    className: e.icon,
+                                                    alt: 'twitter',
+                                                }),
+                                            ),
+                                            l.a.createElement(
+                                                'a',
+                                                {
+                                                    href:
+                                                        'mailto:rakinola90@gmail.com',
+                                                },
+                                                l.a.createElement('img', {
+                                                    src: a(508),
+                                                    className: e.icon,
+                                                    alt: 'mail',
+                                                }),
                                             ),
                                         ),
                                     ),
@@ -1411,7 +1444,7 @@
                     );
                 },
                 se = a(13),
-                ue = Object(u.a)({
+                ue = Object(A.a)({
                     error: {
                         padding: '10px',
                         width: '100%',
@@ -1428,11 +1461,11 @@
                 Ae = function (e) {
                     var t = e.error,
                         a = e.errorOccurred,
-                        l = Object(n.useState)(!1),
-                        o = Object(g.a)(l, 2),
-                        c = o[0],
-                        i = o[1];
-                    Object(n.useEffect)(
+                        n = Object(r.useState)(!1),
+                        c = Object(d.a)(n, 2),
+                        o = c[0],
+                        i = c[1];
+                    Object(r.useEffect)(
                         function () {
                             a ? (i(!0), s()) : i(!1);
                         },
@@ -1444,58 +1477,58 @@
                             }, 6e3);
                         },
                         u = ue();
-                    return r.a.createElement(
+                    return l.a.createElement(
                         'div',
                         {
                             className: Object(se.a)(
                                 u.error,
-                                c ? u.visible : u.hidden,
+                                o ? u.visible : u.hidden,
                             ),
                         },
                         t,
                     );
                 },
                 Ee = a(52),
-                pe = a(564),
-                me = a(559),
-                ge = a(560),
-                de = Object(u.a)({
+                pe = a(567),
+                me = a(562),
+                ge = a(563),
+                de = Object(A.a)({
                     navbar:
-                        ((ce = { background: '#52c234' }),
+                        ((n = { background: '#52c234' }),
                         Object(Ee.a)(
-                            ce,
+                            n,
                             'background',
                             '-webkit-linear-gradient(to right, #6caf5a, #2d7115)',
                         ),
                         Object(Ee.a)(
-                            ce,
+                            n,
                             'background',
                             'linear-gradient(to right, #6caf5a, #2d7115)',
                         ),
-                        Object(Ee.a)(ce, 'alignItems', 'center'),
-                        Object(Ee.a)(ce, 'textAlign', 'center'),
-                        ce),
+                        Object(Ee.a)(n, 'alignItems', 'center'),
+                        Object(Ee.a)(n, 'textAlign', 'center'),
+                        n),
                     'navbar-text': { fontSize: '1.5em', fontWeight: 'bold' },
                     'nav-img': { marginRight: '1rem' },
                 }),
-                Ie = function () {
+                he = function () {
                     var e = de();
-                    return r.a.createElement(
+                    return l.a.createElement(
                         pe.a,
                         { component: 'nav', style: { marginBottom: '1rem' } },
-                        r.a.createElement(
+                        l.a.createElement(
                             me.a,
                             { position: 'static', className: e.navbar },
-                            r.a.createElement(
+                            l.a.createElement(
                                 ge.a,
                                 null,
-                                r.a.createElement('img', {
-                                    src: a(506),
+                                l.a.createElement('img', {
+                                    src: a(509),
                                     height: '35rem',
                                     className: e['nav-img'],
                                     alt: 'logo',
                                 }),
-                                r.a.createElement(
+                                l.a.createElement(
                                     j.a,
                                     {
                                         variant: 'h4',
@@ -1522,7 +1555,7 @@
                 })(
                     'BM0kvq9Et9gZtd3-zjV4z33dMMSSDKxbxOVE0Anyh75qBEPcu4AUtsIAafOERDSiItof3lDo-TRVFcpznxo8gd4',
                 );
-            function he() {
+            function Ie() {
                 return 'serviceWorker' in navigator;
             }
             function ye() {
@@ -1535,14 +1568,14 @@
                 return Ce.apply(this, arguments);
             }
             function Ce() {
-                return (Ce = Object(s.a)(
-                    i.a.mark(function e() {
+                return (Ce = Object(u.a)(
+                    s.a.mark(function e() {
                         var t;
-                        return i.a.wrap(function (e) {
+                        return s.a.wrap(function (e) {
                             for (;;)
                                 switch ((e.prev = e.next)) {
                                     case 0:
-                                        if (!he() || !ye()) {
+                                        if (!Ie() || !ye()) {
                                             e.next = 7;
                                             break;
                                         }
@@ -1573,10 +1606,10 @@
                 return Oe.apply(this, arguments);
             }
             function Oe() {
-                return (Oe = Object(s.a)(
-                    i.a.mark(function e(t) {
+                return (Oe = Object(u.a)(
+                    s.a.mark(function e(t) {
                         var a;
-                        return i.a.wrap(function (e) {
+                        return s.a.wrap(function (e) {
                             for (;;)
                                 switch ((e.prev = e.next)) {
                                     case 0:
@@ -1619,10 +1652,10 @@
                 return Pe.apply(this, arguments);
             }
             function Pe() {
-                return (Pe = Object(s.a)(
-                    i.a.mark(function e(t, a) {
+                return (Pe = Object(u.a)(
+                    s.a.mark(function e(t, a) {
                         var n;
-                        return i.a.wrap(function (e) {
+                        return s.a.wrap(function (e) {
                             for (;;)
                                 switch ((e.prev = e.next)) {
                                     case 0:
@@ -1663,8 +1696,8 @@
                     }),
                 )).apply(this, arguments);
             }
-            function ke() {
-                if (he() && ye())
+            function we() {
+                if (Ie() && ye())
                     return navigator.serviceWorker.ready
                         .then(function (e) {
                             return e.pushManager.getSubscription();
@@ -1673,32 +1706,32 @@
                             return e;
                         });
             }
-            var we = Object(u.a)({ root: { display: 'flex' } }),
-                xe = Object(m.b)(function (e) {
+            var ke = Object(A.a)({ root: { display: 'flex' } }),
+                xe = Object(g.b)(function (e) {
                     return { errorOccurred: e.errorOccurred };
                 })(function (e) {
                     var t = e.errorOccurred,
-                        a = we(),
-                        l = Object(A.a)('(min-width:1024px)'),
-                        o = !navigator.onLine,
-                        c = (function () {
-                            var e = Object(s.a)(
-                                i.a.mark(function e() {
-                                    return i.a.wrap(function (e) {
+                        a = ke(),
+                        n = Object(E.a)('(min-width:1024px)'),
+                        c = !navigator.onLine,
+                        o = (function () {
+                            var e = Object(u.a)(
+                                s.a.mark(function e() {
+                                    return s.a.wrap(function (e) {
                                         for (;;)
                                             switch ((e.prev = e.next)) {
                                                 case 0:
-                                                    ke().then(
+                                                    we().then(
                                                         (function () {
-                                                            var e = Object(s.a)(
-                                                                i.a.mark(
+                                                            var e = Object(u.a)(
+                                                                s.a.mark(
                                                                     function e(
                                                                         t,
                                                                     ) {
                                                                         var a,
                                                                             n,
                                                                             r;
-                                                                        return i.a.wrap(
+                                                                        return s.a.wrap(
                                                                             function (
                                                                                 e,
                                                                             ) {
@@ -1796,32 +1829,32 @@
                             };
                         })();
                     return (
-                        Object(n.useEffect)(function () {
-                            he() && ye() && c();
+                        Object(r.useEffect)(function () {
+                            Ie() && ye() && o();
                         }, []),
-                        r.a.createElement(
-                            r.a.Fragment,
+                        l.a.createElement(
+                            l.a.Fragment,
                             null,
-                            r.a.createElement(E.a, null),
-                            r.a.createElement(Ie, null),
-                            r.a.createElement(Ae, {
+                            l.a.createElement(p.a, null),
+                            l.a.createElement(he, null),
+                            l.a.createElement(Ae, {
                                 errorOccurred: t,
                                 error: 'An internal server error occurred',
                             }),
-                            r.a.createElement(Ae, {
-                                errorOccurred: o,
+                            l.a.createElement(Ae, {
+                                errorOccurred: c,
                                 error: 'App offline falling back to cache',
                             }),
-                            r.a.createElement(
-                                p.a,
-                                { maxWidth: l && 'md', className: a.root },
-                                r.a.createElement(ie, null),
+                            l.a.createElement(
+                                m.a,
+                                { maxWidth: n && 'md', className: a.root },
+                                l.a.createElement(ie, null),
                             ),
                         )
                     );
                 }),
-                De = a(65),
-                Ne = a(251),
+                Ne = a(65),
+                De = a(251),
                 Me = a(252),
                 je = {
                     totals: {},
@@ -1839,31 +1872,31 @@
                         t = arguments.length > 1 ? arguments[1] : void 0;
                     switch (t.type) {
                         case 'FETCH_NATIONALTOTAL':
-                            return (e = Object(f.a)({}, e, {
+                            return (e = Object(I.a)({}, e, {
                                 totals: t.data,
                                 isLoading: !1,
                                 errorOccurred: !1,
                             }));
                         case 'FETCH_STATETOTAL':
-                            return (e = Object(f.a)({}, e, {
+                            return (e = Object(I.a)({}, e, {
                                 states: t.data,
                                 isLoading: !1,
                                 errorOccurred: !1,
                             }));
                         case 'FETCH_STATETIMELINE':
-                            return (e = Object(f.a)({}, e, {
+                            return (e = Object(I.a)({}, e, {
                                 stateTimelines: t.data,
                                 isLoading: !1,
                                 errorOccurred: !1,
                             }));
                         case 'FETCH_NATIONALTIMELINE':
-                            return (e = Object(f.a)({}, e, {
+                            return (e = Object(I.a)({}, e, {
                                 nationalTimelines: t.data,
                                 isLoading: !1,
                                 errorOccurred: !1,
                             }));
                         case 'API_ERROR':
-                            return (e = Object(f.a)({}, e, {
+                            return (e = Object(I.a)({}, e, {
                                 isLoading: !0,
                                 errorOccurred: !0,
                             }));
@@ -1871,22 +1904,22 @@
                             return e;
                     }
                 },
-                Se = Object(De.createStore)(
+                Se = Object(Ne.createStore)(
                     Be,
-                    Object(Ne.composeWithDevTools)(
-                        Object(De.applyMiddleware)(Me.a),
+                    Object(De.composeWithDevTools)(
+                        Object(Ne.applyMiddleware)(Me.a),
                     ),
                 );
             o.a.render(
-                r.a.createElement(
-                    m.a,
+                l.a.createElement(
+                    g.a,
                     { store: Se },
-                    r.a.createElement(xe, null),
+                    l.a.createElement(xe, null),
                 ),
                 document.getElementById('root'),
             ),
                 (function () {
-                    if (he())
+                    if (Ie())
                         navigator.serviceWorker.register('/service-worker.js');
                 })();
         },
@@ -1897,4 +1930,4 @@
     },
     [[300, 1, 2]],
 ]);
-//# sourceMappingURL=main.443f3569.chunk.js.map
+//# sourceMappingURL=main.c9d8b881.chunk.js.map

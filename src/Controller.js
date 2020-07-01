@@ -84,13 +84,14 @@ const getAllSubscriptions = async (req, res, next) => {
 
 const saveSubscription = async (req, res, next) => {
     const sub = req.body;
+    const url = `${req.protocol}://${req.get('host')}`;
     try {
         const data = await notificationService.saveSubDetails(sub);
         const payload = {
-            url: 'https://covid19.ethicalhub.tech',
+            url,
             title: 'Covid19 Nigeria',
             text:
-                'You have successfully subscribe for COVID19 Nigeria notification updates',
+                'You have successfully subscribe for COVID-19 Nigeria daily notification',
         };
         res.json({
             data,
