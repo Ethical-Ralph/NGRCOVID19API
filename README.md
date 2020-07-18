@@ -6,8 +6,7 @@ Source:
 
 -   [NCDC](https://covid19.ncdc.gov.ng)
 
-Live at [`https://covid19.ethicalhub.tech/`](https://covid19.ethicalhub.tech/)
-
+Live at [`https://covid19ngr.herokuapp.com/`](https://covid19ngr.herokuapp.com/)
 # REST API
 
 The endpoints to the API is described below.
