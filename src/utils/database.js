@@ -17,4 +17,4 @@ exports.database = (MONGODB_URL) => {
             console.log('mongodb started');
         },
     );
-};
+}
